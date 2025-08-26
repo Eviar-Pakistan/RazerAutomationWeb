@@ -8,15 +8,15 @@ RazerID:fastVividTangeloJET216
 Product Details
 ===================
 
-Product ID: 22439
-Vanity Name: 60,000 Coins
+Product ID: 22430
+Vanity Name: 10 Coins
 Quantity: 1
 
 ===================
 Transaction Results
 ===================
 
-Purchase 1 Failed
-{"code":70613,"message":"Transaction amount has exceeded the maximum amount allowed"}
-
+Purchase 1:
+Transaction Number: 122GWRXZMODSB383C2628
+Pin Code: WPRzYbuZZPDUQO0
 

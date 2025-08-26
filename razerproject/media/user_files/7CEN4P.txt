@@ -3,20 +3,18 @@ User Details
 
 Account:umairkhanpk2004@gmail.com
 RazerID:fastVividTangeloJET216
-
-===================
 Product Details
 ===================
 
-Product ID: 22439
-Vanity Name: 60,000 Coins
-Quantity: 1
-
-===================
+Product ID: 23032
+Vanity Name: 60 UC
+Quantity: 2
 Transaction Results
 ===================
 
 Purchase 1 Failed
-{"code":70613,"message":"Transaction amount has exceeded the maximum amount allowed"}
+{"code":70600,"message":"Invalid Request"}
 
+Purchase 2 Failed
+{"code":70600,"message":"Invalid Request"}
 

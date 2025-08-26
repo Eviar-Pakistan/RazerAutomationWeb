@@ -47,23 +47,20 @@ def django_user_signup_view(request):
 
 def django_user_login_interface(request):
     return render(request, "django_user_login.html")
-
+@csrf_exempt
 def django_user_login_view(request):
-    error_message = None
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
 
-        # Authenticate user
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return render(request, "form.html", {"success": "User logged in successfully!"})
+            return JsonResponse({"success": True, "message": "User logged in successfully!"})
         else:
-            error_message = "Invalid username or password."
-            return render(request, "django_user_login.html", {"error": error_message})
+            return JsonResponse({"success": False, "message": "Invalid username or password."})
 
-    return render(request, "django_user_login.html",{"error": error_message})  # form dikhane ke liye template
+    return JsonResponse({"success": False, "message": "Invalid request method."})
 
 
 def login_view(request):
@@ -131,9 +128,9 @@ def form_view_operation(request):
                  download_url = line.split("Download URL:")[1].strip()
             
             if download_url:
-             return JsonResponse({"message": "Purchase Completed", "download_url": download_url})
+             return JsonResponse({"message": "Purchase Completed", "download_url": download_url,"error":stdout_text})
             else:
-                return JsonResponse({"error":"No download URL found. Check logs."}, status=500)
+                return JsonResponse({"error":f"No download URL found. Check logs.{stdout_text}"}, status=500)
         except Exception as e:
             return HttpResponse(f"Error: {str(e)}", status=500)
 
@@ -218,3 +215,39 @@ def save_and_store_file(request):
             "message": "File saved and stored in model",
             "download_url": file_history.get_download_url()
         })
+    
+@csrf_exempt
+def get_user_files(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            user_email = data.get("email")
+            print("DEBUG USER EMAIL:", user_email)
+
+            # 1. Get the RazerUser
+            razer_user = get_object_or_404(RazerUser, email=user_email)
+
+            # 2. Fetch related file history
+            files = UserFileHistory.objects.filter(razer_user=razer_user)
+            print("DEBUG FILES:", files)
+            file_list = [
+                {
+                    "file_id": f.id,
+                    "file_name": f.file.name,   
+                    "download_url": f.file.url,
+                    "uploaded_at": f.created_at.strftime("%Y-%m-%d %H:%M:%S"),
+                }
+                for f in files
+            ]
+            print("DEBUG FILES:", files)
+
+            return JsonResponse({
+                "user_id": razer_user.id,
+                "email": razer_user.email,
+                "files": file_list
+            }, safe=False)
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+
+    return JsonResponse({"error": "Invalid request method"}, status=405)

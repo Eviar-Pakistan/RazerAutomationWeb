@@ -7,6 +7,8 @@ import json
 import random
 import string
 
+
+errorString=""
 # Getting data from frontend-->views.py-->main2.py
 if __name__ == "__main__":
     raw_data = sys.argv[1]
@@ -43,7 +45,8 @@ if __name__ == "__main__":
       f.write("User Details\n")
       f.write("===================\n\n")
       f.write(f"Account:{user_data.get("Account")}\n")
-      f.write(f"RazerID:{user_data.get("RazerID")}\n")
+      f.write(f"RazerID:{user_data.get("RazerID")}\n\n")
+      f.write("===================\n")
       f.write("Product Details\n")
       f.write("===================\n\n")
     #   f.write(f"Product Name:{product}\n")
@@ -60,7 +63,8 @@ if __name__ == "__main__":
         with open(output_file, "a") as f:
             f.write(f"Product ID: {product_id}\n")
             f.write(f"Vanity Name: {vanity}\n")
-            f.write(f"Quantity: {quantity}\n")
+            f.write(f"Quantity: {quantity}\n\n")
+            f.write("===================\n")
           
         print(f"[Main2] Product ID: {product_id}")
         print(f"[Main2] Vanity Name: {vanity}")
@@ -139,9 +143,10 @@ if __name__ == "__main__":
             if checkout_response.status_code != 200:
                 print("Purchase Failed")
                 print(checkout_response.text)
+                errorString+=f"{checkout_response.text}"
                 with open(output_file, "a") as f:
-                        f.write(f"Purchase {i+1} Failed\n{checkout_response.text}\n\n")
-                continue
+                        f.write(f"Purchase {i+1} Failed\n{checkout_response.text}\n\n\n")
+                break
                 #  sys.exit()
 
             checkout_data = checkout_response.json()
@@ -193,6 +198,8 @@ try:
     if upload_response.status_code == 200:
         print("[Main2] File uploaded and stored in model")
         print(" Download URL:", upload_response.json().get("download_url"))
+        if errorString:
+            print("eerrorString",errorString)
     else:
         print("[Main2] Failed to upload file")
         print(upload_response.text)

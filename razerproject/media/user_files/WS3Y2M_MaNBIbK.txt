@@ -1,0 +1,145 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+Product Details
+
+===================
+
+Product ID: 23032
+Vanity Name: 60 UC
+Quantity: 10
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 2 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 3 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 4 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 5 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 6 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 7 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 8 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 9 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 10 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Product ID: 23033
+Vanity Name: 300 + 25 UC
+Quantity: 20
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 2 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 3 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 4 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 5 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 6 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 7 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 8 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 9 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 10 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 11 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 12 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 13 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 14 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 15 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 16 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 17 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 18 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 19 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Purchase 20 Failed
+{"code":70600,"message":"Invalid Request"}
+
+

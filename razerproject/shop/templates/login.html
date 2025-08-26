@@ -8,14 +8,15 @@
   <div class="bg-gray-800 p-10 rounded-2xl shadow-lg w-full max-w-lg">
     <h2 class="text-3xl font-bold text-green-400 text-center mb-6">Razer Gold Automation</h2>
     
-    <form action="/run" method="post" class="space-y-5">
-      {% csrf_token %}
+    <form autocomplete="off" class="space-y-5">
+      {% csrf_token %}z
       
       <input 
         type="email" 
         name="email" 
         placeholder="Email" 
         required 
+        autocomplete="off"
         class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
       >
       
@@ -24,11 +25,12 @@
         name="password" 
         placeholder="Password" 
         required 
+       autocomplete="new-password"
         class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
       >
       
       <button 
-      type="submit" 
+      id="loginButton"
       class="w-full py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg shadow-lg transition"
     >
       Login
@@ -38,6 +40,31 @@
   </div>
 
   
+  <script>
+    const loginBtn=document.getElementById("loginButton");
+    loginBtn.addEventListener("click", function () {
+      const form = document.querySelector("form");
+  
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault(); // stop normal reload
+  
+        let response = await fetch("/run", {
+          method: POST,
+          body: new FormData(form),
+          headers: { "X-CSRFToken": "{{ csrf_token }}" }
+        });
+  
+        let text = await response.text();
+  
+        if (text.includes("Login successful")) {
+          
+          form.reset(); 
+        } else {
+          alert("Login Failed ❌");
+        }
+      });
+    });
   </script>
+  
 </body>
 </html>
