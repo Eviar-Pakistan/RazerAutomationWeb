@@ -44,9 +44,9 @@
       Login
     </button>
     </form>
-    <div class="mt-4 text-center">
+    {% comment %} <div class="mt-4 text-center">
       <p class="text-gray-400">Don't have an account? <a href="/" class="text-green-500 hover:underline">Register</a></p>
-    <div>
+    <div> {% endcomment %}
 
   </div>
 
@@ -70,6 +70,9 @@
       let data = await response.json();
 
       if (data.success) {
+      
+        sessionStorage.setItem("username", form.elements["username"].value);
+      
         form.reset();
         window.location.href = "/form";  
       } else {

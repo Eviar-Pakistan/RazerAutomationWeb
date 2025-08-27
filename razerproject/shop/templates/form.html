@@ -66,9 +66,12 @@
     }
   }
 </style>
-<body class="bg-gray-900 flex items-center justify-center min-h-screen">
-  <div class="bg-gray-800 p-10 rounded-2xl shadow-lg w-full max-w-lg relative">
+<body class="bg-gray-900 flex items-center justify-center min-h-screen relative">
+  <div class="absolute right-[50px] top-[50px] rounded-md bg-green-500 text-white text-md font-medium p-2"><p id="LoggedInUser"></p></div>
+  <div class="bg-gray-800 p-10 rounded-2xl shadow-lg w-full max-w-xl relative">
     <h2 class="text-3xl font-bold text-green-400 text-center mb-6">Razer Gold Automation</h2>
+    <p id="selectedLoggedInUser" class="text-white text-md font-medium text-center hidden p-2 border border-green-500 rounded-full"></p>
+
     <div id="Backbtn" class="p-3 rounded-md bg-red-500 absolute font-bold absolute top-1 left-1 hidden text-white text-base"><p>Back</p></div>
     <form id="userForm" class="">
       {% csrf_token %}
@@ -99,13 +102,28 @@
       </button>
       <div id="loginStatus" class="text-green-400 text-sm mt-4"></div>
      </div>
+
+
     
+
+
     <h1 id="prodlinkheading" class="text-2xl hidden font-bold text-white text-left mb-6 mt-4">Enter product link</h1>
 
 
-    <input type="text" name="productLink" id="ProductLink"
+    <input list="productsList" type="text" name="productLink" id="ProductLink"
       class="w-full p-4 hidden text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 mb-4"
       placeholder="Enter product link here">
+
+      <datalist id="productsList">
+        <option  value="https://gold.razer.com/pk/en/gold/catalog/pubg-mobile-uc-code">PUBG</option>
+        <option value="https://gold.razer.com/pk/en/gold/catalog/gangster-mafia">Ganster Mafia</option>
+        <option value="https://gold.razer.com/pk/en/gold/catalog/yalla-ludo">Yalla Ludo</option>
+        <option value="https://gold.razer.com/pk/en/gold/catalog/freefire-pins">Free Fire</option>
+        <option value="https://gold.razer.com/pk/en/gold/catalog/playstation-store-usa">Playstation 
+          Store USA
+        </option>
+
+      </datalist>
     <button id="productFetchbtn"
       class="w-full py-3 bg-green-500 hidden hover:bg-green-600 text-white mt-4 mb-2 font-bold rounded-lg shadow-lg transition">
       Fetch Product Info
@@ -147,6 +165,9 @@
   </div>
 
   <script>
+    document.getElementById("LoggedInUser").innerText =`${sessionStorage.getItem("username")}`
+
+
     let selecteduserEmail;
     document.querySelector("form").addEventListener("submit", async function (e) {
       e.preventDefault();
@@ -261,10 +282,13 @@
         document.getElementById("userSelectionSection").classList.add("hidden");
         document.getElementById("userForm").classList.add("hidden");
         document.getElementById("Backbtn").classList.remove("hidden");
+
+        document.getElementById("selectedLoggedInUser").classList.remove("hidden");
+        document.getElementById("selectedLoggedInUser").innerText = `Logged in as: ${email}`;
        
-        statusDiv.innerHTML = `<span style="color:green">${text}</span>`;
+        statusDiv.innerHTML = `<p class="text-green-500 text-base font-medium">${text}</p>`;
       } else {
-        statusDiv.innerHTML = `<span style="color:red">${text}</span>`;
+        statusDiv.innerHTML = `<p class="text-red-500 text-base font-medium" style="color:red">${text}</p>`;
       }
     });
 
@@ -296,7 +320,7 @@
 
       const productCheckboxes = data.products.map(p => `
         <div class="flex items-center gap-4 mb-4">
-          <input type="checkbox" class="product-check" data-id="${p.productId}" data-vanity="${p.vanityName}">
+          <input type="checkbox" class="product-check w-5 h-5 text-green-500 bg-gray-800 border-2 border-green-500 rounded focus:ring-2 focus:ring-green-400" data-id="${p.productId}" data-vanity="${p.vanityName}">
           <label class="text-white text-lg font-semibold">${p.vanityName}</label>
           <input type="number" min="1" value="1"
             class="product-qty w-20 p-2 text-white bg-gray-800 border border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
@@ -394,6 +418,10 @@
       document.getElementById("loginStatus").innerHTML = "";
       document.getElementById("viewPurchase").classList.add("hidden")
       document.getElementById("ProductLink").value = "";
+
+      
+      document.getElementById("selectedLoggedInUser").classList.add("hidden");
+      document.getElementById("selectedLoggedInUser").innerText = "";
     });
 
     currentPurchase=document.getElementById("viewPurchase")
