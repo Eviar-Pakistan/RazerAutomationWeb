@@ -103,6 +103,8 @@ def form_view_operation(request):
             selected_products = data.get("products", [])
             productName = data.get("productName")
             userEmail = data.get("userEmail")
+            secretKey = data.get("secretKey")
+            regionId = data.get("regionId")
 
             print("DEBUG SELECTED PRODUCTS:", selected_products)
             print("DEBUG PRODUCT NAME:", productName)
@@ -115,7 +117,7 @@ def form_view_operation(request):
             print("FILE EXISTS:", os.path.exists(script_path))
 
             result = subprocess.run(
-                [sys.executable, script_path, serialized,productName,userEmail],
+                [sys.executable, script_path, serialized,productName,userEmail,secretKey,regionId],
                 capture_output=True,
                 text=True
             )
@@ -199,23 +201,16 @@ def save_and_store_file(request):
 
         razer_user = get_object_or_404(RazerUser, email=email)
 
-        folder_path = os.path.join(settings.MEDIA_ROOT, "user_files")
-        os.makedirs(folder_path, exist_ok=True)
-
-        file_path = os.path.join(folder_path, filename)
-        with open(file_path, "w") as f:
-            f.write(content)
-
-        with open(file_path, "rb") as f:
-            file_history = UserFileHistory(razer_user=razer_user)
-            file_history.file.save(filename, File(f))
-            file_history.save()
+        # Save file directly through Django FileField
+        file_history = UserFileHistory(razer_user=razer_user)
+        file_history.file.save(filename, ContentFile(content))
+        file_history.save()
 
         return JsonResponse({
             "message": "File saved and stored in model",
             "download_url": file_history.get_download_url()
         })
-    
+
 @csrf_exempt
 def get_user_files(request):
     if request.method == "POST":

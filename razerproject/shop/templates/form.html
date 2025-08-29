@@ -83,12 +83,28 @@
       <label class="block text-white text-xl mt-4 mb-2" for="store_password">Enter user password</label>
       <input type="text" name="store_password"
         class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+      <label class="block text-white text-xl mt-4 mb-2" for="store_password">Enter secret key</label>
+      <input type="text" name="store_secretkey"
+        class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
       <button type="submit"
         class="w-full py-3 bg-green-500 hover:bg-green-600 text-white my-8 font-bold rounded-lg shadow-lg transition">
         Store
       </button>
     </form>
-    <div id="userSelectionSection" class="">
+
+    <div id="regionSelection">
+      <h1 class="text-2xl font-bold text-white text-left mb-6">Select Region</h1>
+      <select id="regionSelect"
+        class="w-full p-4 text-white bg-gray-800  border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 ">
+        <option class="" value="">Select Region</option>
+        <option value="2">USA:2</option>
+        <option value="29">PK:29</option>
+      </select>
+
+    </div>
+
+
+    <div class="mt-4" id="userSelectionSection" class="">
       <h1 class="text-2xl font-bold text-white text-left mb-6">Select Razer User</h1>
 
       <select id="userSelect"
@@ -169,14 +185,21 @@
 
 
     let selecteduserEmail;
+    let selectedSecretKey;
+    let selectedRegion;
+    
     document.querySelector("form").addEventListener("submit", async function (e) {
       e.preventDefault();
     
       let emailInput = document.querySelector("[name='store_email']");
       let passwordInput = document.querySelector("[name='store_password']");
-    
+      let secretKeyInput = document.querySelector("[name='store_secretkey']");
+
       let email = emailInput.value;
       let password = passwordInput.value;
+      let secretKey = secretKeyInput.value;
+
+      console.log("Storing user:", email, password, secretKey);
     
       let response = await fetch("{% url 'razerusers' %}", {
         method: "POST",
@@ -184,7 +207,7 @@
           "Content-Type": "application/json",
           "X-CSRFToken": "{{ csrf_token }}"
         },
-        body: JSON.stringify({ store_email: email, store_password: password })
+        body: JSON.stringify({ store_email: email, store_password: password,store_secret_key:secretKey })
       });
     
       let data = await response.json();
@@ -193,6 +216,7 @@
         alert("Razer user stored successfully!");
         emailInput.value = "";
         passwordInput.value = "";
+        secretKeyInput.value = "";
       } else {
         alert("User already exists");
         emailInput.value = "";
@@ -226,7 +250,7 @@
       users.forEach(user => {
         const option = document.createElement("option");
         option.className = "bg-gray-800 text-white";
-        option.value = `${user.store_email} ${user.store_password}`;
+        option.value = `${user.store_email} ${user.store_password} ${user.store_secret_key}`;
         option.textContent = `${user.store_email} ${user.store_password}`;
         select.appendChild(option);
       });
@@ -252,9 +276,18 @@
         return;
       }
       console.log("Selected user:", selectedUser);
+
       email = selectedUser[0];
       selecteduserEmail = email;
       password = selectedUser[1];
+      secretKey = selectedUser[2];
+      selectedSecretKey=secretKey;
+
+      selectedRegion=document.getElementById("regionSelect").value
+
+      console.log("Using email:", email, "password:", password, "secretKey:", secretKey, "region:", selectedRegion);
+
+
       {% comment %} const [email, password] = selectedValue.split(" ");
       console.log("selected email:", email, "selected password:", password); {% endcomment %}
       const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
@@ -267,7 +300,8 @@
         },
         body: new URLSearchParams({
           email: email,
-          password: password
+          password: password,
+          secretKey: secretKey
         })
       });
 
@@ -282,6 +316,9 @@
         document.getElementById("userSelectionSection").classList.add("hidden");
         document.getElementById("userForm").classList.add("hidden");
         document.getElementById("Backbtn").classList.remove("hidden");
+
+
+        document.getElementById("regionSelection").classList.add("hidden");
 
         document.getElementById("selectedLoggedInUser").classList.remove("hidden");
         document.getElementById("selectedLoggedInUser").innerText = `Logged in as: ${email}`;
@@ -359,7 +396,8 @@
         }
         console.log("Selected products:", selectedProducts);
         const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
-
+       
+        console.log("Data before form operation:", { products: selectedProducts, productName: productName, userEmail: selecteduserEmail, secretKey: selectedSecretKey });
 
         const res = await fetch("/form-operation", {
           method: "POST",
@@ -367,7 +405,7 @@
             "Content-Type": "application/json",
             "X-CSRFToken": csrftoken
           },
-          body: JSON.stringify({ products: selectedProducts, productName: productName, userEmail: selecteduserEmail })
+          body: JSON.stringify({ products: selectedProducts, productName: productName, userEmail: selecteduserEmail, secretKey: selectedSecretKey, regionId: selectedRegion })
         });
 
         const result = await res.json();
@@ -422,6 +460,15 @@
       
       document.getElementById("selectedLoggedInUser").classList.add("hidden");
       document.getElementById("selectedLoggedInUser").innerText = "";
+
+      document.getElementById("regionSelection").classList.remove("hidden");
+      
+
+
+      {% comment %} Hiding files and view history button {% endcomment %}
+      const filesHolder = document.getElementById("filesholder");
+      filesHolder.innerHTML = "";
+      document.getElementById("viewHistoryBtn").classList.add("hidden");
     });
 
     currentPurchase=document.getElementById("viewPurchase")

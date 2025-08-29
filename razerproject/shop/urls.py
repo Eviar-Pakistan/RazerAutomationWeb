@@ -3,6 +3,7 @@ from . import views
 from .views import RazerUserListCreateView
 urlpatterns = [
     path("", views.django_user_login_interface, name="login-interface"),
+    path("su/", views.django_user_signup_interface, name="signup-interface"),
     path("login/", views.django_user_login_interface, name="login-interface"),
     path("django-signup/", views.django_user_signup_view, name="django-signup"),
     path("django-login/", views.django_user_login_view, name="django-login"),

@@ -15,6 +15,8 @@ if __name__ == "__main__":
     selected_products = json.loads(raw_data)
     productName = sys.argv[2] 
     userEmail=sys.argv[3]
+    secretKey=sys.argv[4]
+    regionId=sys.argv[5]
     print("[Main2] Selected Products:", selected_products)
     print("[Main2] Product Name:", productName)
     print("[Main2] Email Name:", userEmail)
@@ -73,7 +75,7 @@ if __name__ == "__main__":
 
 
         
-        finalcode = pyotp.TOTP("NNCXGNDCNJFTQZSGGQ4WMUBZMFXVCVSUGBRGKVSPK5NEQQLQ").now()
+        finalcode = pyotp.TOTP(f"{secretKey}").now()
 
         otp_url = "https://razer-otptoken-service.razer.com/totp/post"
 
@@ -106,7 +108,7 @@ if __name__ == "__main__":
         checkout_url = "https://gold.razer.com/api/webshop/checkout/gold"
         checkout_payload = {
             "productId": int(product_id),
-            "regionId": 29,
+            "regionId": int(regionId),
             "paymentChannelId": 1,
             "emailIsRequired": True,
             "email": "umairkhanpk2004@gmail.com",

@@ -15,7 +15,7 @@
     <p class="mb-4 p-3 bg-green-500 text-white rounded-lg">{{ success }}</p>
   {% endif %}
     
-    <form action="django-signup/" method="post" class="space-y-5">
+  <form method="POST" action="{% url 'django-signup' %}" class="space-y-5">
       {% csrf_token %}
       <label class="block text-[#44D62C] text-xl mt-4" for="username">Enter username:</label>
       <input 

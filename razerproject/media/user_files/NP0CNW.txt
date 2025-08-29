@@ -3,16 +3,20 @@ User Details
 
 Account:umairkhanpk2004@gmail.com
 RazerID:fastVividTangeloJET216
+
+===================
 Product Details
 ===================
 
-Product ID: 22430
-Vanity Name: 10 Coins
+Product ID: 23032
+Vanity Name: 60 UC
 Quantity: 1
+
+===================
 Transaction Results
 ===================
 
-Purchase 1:
-Transaction Number: 122GWRXGMTDOC8E94BADD
-Pin Code: bHCRRBfAmbMkzby
+Purchase 1 Failed
+{"code":70607,"message":"RegionID is mismatched"}
+
 
