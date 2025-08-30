@@ -20,6 +20,7 @@ if __name__ == "__main__":
     print("[Main2] Selected Products:", selected_products)
     print("[Main2] Product Name:", productName)
     print("[Main2] Email Name:", userEmail)
+    print("[Main2] Secret Key:", secretKey)
     # Loading session to get cookies etc
     with open("session.pkl", "rb") as f:
       session = pickle.load(f)
@@ -95,10 +96,13 @@ if __name__ == "__main__":
 
 
         if otp_response.status_code != 200:
-            print("[Main2] OTP Verification Failed")
+            print("OTP Verification Failed")
             print(otp_response.text)
-            sys.exit()
-
+            errorString+=f"{"OTP ERROR:",otp_response.text}"
+            with open(output_file, "a") as f:
+                    f.write(f"OTP {i+1} Failed\n{otp_response.text}\n\n\n")
+            break
+           
         
         otp_data = otp_response.json()
         otp_token_enc = otp_data.get("otp_token_enc")
@@ -111,7 +115,7 @@ if __name__ == "__main__":
             "regionId": int(regionId),
             "paymentChannelId": 1,
             "emailIsRequired": True,
-            "email": "umairkhanpk2004@gmail.com",
+            "email": userEmail,
             "otpToken": otp_token_enc,
             "permalink": productName,
             "personalizedInfo": [],
@@ -131,7 +135,7 @@ if __name__ == "__main__":
             
         }
         
-        # save result
+        
 
         with open(output_file, "a") as f:
          f.write("Transaction Results\n")
@@ -139,11 +143,13 @@ if __name__ == "__main__":
 
         for i in range(int(quantity)):
             checkout_response = session.post(checkout_url, json=checkout_payload, headers=checkout_headers)
+
+            
             print("Checkout Status:", checkout_response.status_code)
             print("Chechkout Response",checkout_response.text)
 
             if checkout_response.status_code != 200:
-                print("Purchase Failed")
+                print("Checkout Failed")
                 print(checkout_response.text)
                 errorString+=f"{checkout_response.text}"
                 with open(output_file, "a") as f:
@@ -169,6 +175,13 @@ if __name__ == "__main__":
             }
 
             response = session.get(webshop_url, headers=api_headers)
+            if response.status_code != 200:
+                print("Getting Voucher Failed")
+                print(response.text)
+                errorString+=f"{response.text}"
+                with open(output_file, "a") as f:
+                        f.write(f"Voucher {i+1} Failed\n{response.text}\n\n\n")
+                break
             data = response.json()
             pin_code = data["fullfillment"]["pins"][0]["pinCode1"]
 

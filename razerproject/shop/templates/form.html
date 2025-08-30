@@ -1,538 +1,764 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Razer Bot</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="csrf-token" content="{{ csrf_token }}">
-</head>
-<style>
- 
-  
-  span{
-    height: 20px;
-    width: 20px;
-    background: #44D62C;
-    margin-left: 20px;
-    float: left;
-    animation: fade 2s linear infinite;
-    border: 2px solid white;
-  }
-  
-  span:nth-child(2){
-    animation-delay: 0.2s;
-  }
-  
-  span:nth-child(3){
-    animation-delay: 0.4s;
-  }
-  
-  span:nth-child(4){
-    animation-delay: 0.6s;
-  }
-  
-  span:nth-child(5){
-    animation-delay: 0.8s;
-  }
-  
-  span:nth-child(6){
-    animation-delay: 1s;
-  }
-  
-  span:nth-child(7){
-    animation-delay: 1.2s;
-  }
-  
-  span:nth-child(8){
-    animation-delay: 1.4s;
-  }
-  
-  span:nth-child(9){
-    animation-delay: 1.6s;
-  }
-  
-  span:nth-child(10){
-    animation-delay: 1.8s;
-  }
-  
-  
-  @keyframes fade{
-    95%{
-      opacity: 0;
-      transform: scale(0) rotate(120deg);
+  <head>
+    <title>Razer Bot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="csrf-token" content="{{ csrf_token }}" />
+  </head>
+  <style>
+    span {
+      height: 20px;
+      width: 20px;
+      background: #44d62c;
+      margin-left: 20px;
+      float: left;
+      animation: fade 2s linear infinite;
+      border: 2px solid white;
     }
-    97%{
-      transform: rotate(0deg);
+
+    span:nth-child(2) {
+      animation-delay: 0.2s;
     }
-  }
-</style>
-<body class="bg-gray-900 flex items-center justify-center min-h-screen relative">
-  <div class="absolute right-[50px] top-[50px] rounded-md bg-green-500 text-white text-md font-medium p-2"><p id="LoggedInUser"></p></div>
-  <div class="bg-gray-800 p-10 rounded-2xl shadow-lg w-full max-w-xl relative">
-    <h2 class="text-3xl font-bold text-green-400 text-center mb-6">Razer Gold Automation</h2>
-    <p id="selectedLoggedInUser" class="text-white text-md font-medium text-center hidden p-2 border border-green-500 rounded-full"></p>
 
-    <div id="Backbtn" class="p-3 rounded-md bg-red-500 absolute font-bold absolute top-1 left-1 hidden text-white text-base"><p>Back</p></div>
-    <form id="userForm" class="">
-      {% csrf_token %}
-      <h1 class="text-2xl font-bold text-white text-left mb-6">Store Razer User</h1>
-      <label class="block text-white text-xl mt-4 mb-2" for="store_email">Enter user email</label>
-      <input type="text" name="store_email"
-        class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+    span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
 
-      <label class="block text-white text-xl mt-4 mb-2" for="store_password">Enter user password</label>
-      <input type="text" name="store_password"
-        class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
-      <label class="block text-white text-xl mt-4 mb-2" for="store_password">Enter secret key</label>
-      <input type="text" name="store_secretkey"
-        class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
-      <button type="submit"
-        class="w-full py-3 bg-green-500 hover:bg-green-600 text-white my-8 font-bold rounded-lg shadow-lg transition">
-        Store
-      </button>
-    </form>
+    span:nth-child(4) {
+      animation-delay: 0.6s;
+    }
 
-    <div id="regionSelection">
-      <h1 class="text-2xl font-bold text-white text-left mb-6">Select Region</h1>
-      <select id="regionSelect"
-        class="w-full p-4 text-white bg-gray-800  border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 ">
-        <option class="" value="">Select Region</option>
-        <option value="2">USA:2</option>
-        <option value="29">PK:29</option>
-      </select>
+    span:nth-child(5) {
+      animation-delay: 0.8s;
+    }
 
+    span:nth-child(6) {
+      animation-delay: 1s;
+    }
+
+    span:nth-child(7) {
+      animation-delay: 1.2s;
+    }
+
+    span:nth-child(8) {
+      animation-delay: 1.4s;
+    }
+
+    span:nth-child(9) {
+      animation-delay: 1.6s;
+    }
+
+    span:nth-child(10) {
+      animation-delay: 1.8s;
+    }
+
+    @keyframes fade {
+      95% {
+        opacity: 0;
+        transform: scale(0) rotate(120deg);
+      }
+      97% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+  <body
+    class="bg-gray-900 flex items-center justify-center min-h-screen relative"
+  >
+    <div
+      class="absolute right-[50px] top-[50px] rounded-md bg-green-500 text-white text-md font-medium p-2"
+    >
+      <p id="LoggedInUser"></p>
     </div>
+    <div
+      class="bg-gray-800 p-10 rounded-2xl shadow-lg w-full max-w-xl relative"
+    >
+      <h2 class="text-3xl font-bold text-green-400 text-center mb-6">
+        Razer Gold Automation
+      </h2>
+      <p
+        id="selectedLoggedInUser"
+        class="text-white text-md font-medium text-center hidden p-2 border border-green-500 rounded-full"
+      ></p>
 
+      <div
+        id="Backbtn"
+        class="p-3 rounded-md bg-red-500 absolute font-bold absolute top-1 left-1 hidden text-white text-base"
+      >
+        <p>Back</p>
+      </div>
+       <div id="userForm" >
+        <form id="loginForm" >
+          <h1 class="text-2xl font-bold text-white text-left mb-6">
+            Store Razer User
+          </h1>
+          
+          <label class="block text-white text-xl mt-4 mb-2" for="user_email"
+          >Enter user email</label
+        >
+          <input autocomplete="off" id="user_email" type="email" name="email" placeholder="Email" required class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
+          <label class="block text-white text-xl mt-4 mb-2" for="user_password"
+          >Enter user password</label
+        >
+          <input
+           id="user_password"
+            type="password"
+            name="password"
+            placeholder="Password"
+            autocomplete="new-password"
+            required
+            class="w-full p-4  mt-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+          />
+          <button  class="w-full py-3 bg-green-500 hover:bg-green-600 text-white my-8 font-bold rounded-lg shadow-lg transition" type="submit">Login</button>
+          
+        </form>
+        <div id="loader2" class="top-[0] hidden ml-10 mt-4 mb-4">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <form id="otpForm" style="display: none">
+          <label class="block text-white text-xl mt-4 mb-2" for="user_otp"
+          >Enter otp that you have got.</label
+        >
+          <input
+           id="user_otp"
+            type="text"
+            name="otp"
+            maxlength="6"
+            placeholder="Enter 6-digit OTP"
+            required
+            class="w-full p-4  mt-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+          />
+          <button  class="w-full py-3 bg-green-500 hover:bg-green-600 text-white my-8 font-bold rounded-lg shadow-lg transition" type="submit">Submit OTP</button>
+        </form>
+       </div>
+      
 
-    <div class="mt-4" id="userSelectionSection" class="">
-      <h1 class="text-2xl font-bold text-white text-left mb-6">Select Razer User</h1>
+      <form id="userForm2" class="hidden">
+        {% csrf_token %}
+        
+        <label class="block text-white text-xl mt-4 mb-2" for="store_email"
+          >Enter user email</label
+        >
+        <input
+          type="text"
+          name="store_email"
+          class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
 
-      <select id="userSelect"
-        class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 ">
-        <option value="">Select stored user</option>
-      </select>
-  
-      <button id="loginbtn"
-        class="w-full py-3 bg-green-500 hover:bg-green-600 text-white mt-4 mb-2 font-bold rounded-lg shadow-lg transition">
-        Login User
-      </button>
-      <div id="loginStatus" class="text-green-400 text-sm mt-4"></div>
-     </div>
+        <label class="block text-white text-xl mt-4 mb-2" for="store_password"
+          >Enter user password</label
+        >
+        <input
+          type="text"
+          name="store_password"
+          class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+        <label class="block text-white text-xl mt-4 mb-2" for="store_password"
+          >Enter secret key</label
+        >
+        <input
+          type="text"
+          name="store_secretkey"
+          class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+        <button
+          type="submit"
+          class="w-full py-3 bg-green-500 hover:bg-green-600 text-white my-8 font-bold rounded-lg shadow-lg transition"
+        >
+          Store
+        </button>
+      </form>
 
+      <div id="regionSelection">
+        <h1 class="text-2xl font-bold text-white text-left mb-6 mt-6">
+          Select Region
+        </h1>
+        <select
+          id="regionSelect"
+          class="w-full p-4 text-white bg-gray-800 border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        >
+          <option class="" value="">Select Region</option>
+          <option value="2">USA:2</option>
+          <option value="29">PK:29</option>
+        </select>
+      </div>
 
-    
+      <div class="mt-4" id="userSelectionSection" class="">
+        <h1 class="text-2xl font-bold text-white text-left mb-6">
+          Select Razer User
+        </h1>
 
+        <select
+          id="userSelect"
+          class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        >
+          <option value="">Select stored user</option>
+        </select>
 
-    <h1 id="prodlinkheading" class="text-2xl hidden font-bold text-white text-left mb-6 mt-4">Enter product link</h1>
+        <button
+          id="loginbtn"
+          class="w-full py-3 bg-green-500 hover:bg-green-600 text-white mt-4 mb-2 font-bold rounded-lg shadow-lg transition"
+        >
+          Login User
+        </button>
+        <div id="loginStatus" class="text-green-400 text-sm mt-4"></div>
+      </div>
 
+      <h1
+        id="prodlinkheading"
+        class="text-2xl hidden font-bold text-white text-left mb-6 mt-4"
+      >
+        Enter product link
+      </h1>
 
-    <input list="productsList" type="text" name="productLink" id="ProductLink"
-      class="w-full p-4 hidden text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 mb-4"
-      placeholder="Enter product link here">
+      <input
+        list="productsList"
+        type="text"
+        name="productLink"
+        id="ProductLink"
+        class="w-full p-4 hidden text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 mb-4"
+        placeholder="Enter product link here"
+      />
 
       <datalist id="productsList">
-        <option  value="https://gold.razer.com/pk/en/gold/catalog/pubg-mobile-uc-code">PUBG</option>
-        <option value="https://gold.razer.com/pk/en/gold/catalog/gangster-mafia">Ganster Mafia</option>
-        <option value="https://gold.razer.com/pk/en/gold/catalog/yalla-ludo">Yalla Ludo</option>
-        <option value="https://gold.razer.com/pk/en/gold/catalog/freefire-pins">Free Fire</option>
-        <option value="https://gold.razer.com/pk/en/gold/catalog/playstation-store-usa">Playstation 
-          Store USA
+        <option
+          value="https://gold.razer.com/pk/en/gold/catalog/pubg-mobile-uc-code"
+        >
+          PUBG
         </option>
-
+        <option
+          value="https://gold.razer.com/pk/en/gold/catalog/gangster-mafia"
+        >
+          Ganster Mafia
+        </option>
+        <option value="https://gold.razer.com/pk/en/gold/catalog/yalla-ludo">
+          Yalla Ludo
+        </option>
+        <option value="https://gold.razer.com/pk/en/gold/catalog/freefire-pins">
+          Free Fire
+        </option>
+        <option
+          value="https://gold.razer.com/pk/en/gold/catalog/playstation-store-usa"
+        >
+          Playstation Store USA
+        </option>
       </datalist>
-    <button id="productFetchbtn"
-      class="w-full py-3 bg-green-500 hidden hover:bg-green-600 text-white mt-4 mb-2 font-bold rounded-lg shadow-lg transition">
-      Fetch Product Info
-    </button>
+      <button
+        id="productFetchbtn"
+        class="w-full py-3 bg-green-500 hidden hover:bg-green-600 text-white mt-4 mb-2 font-bold rounded-lg shadow-lg transition"
+      >
+        Fetch Product Info
+      </button>
+
+      <form id="productForm" class="space-y-5 mt-6">{% csrf_token %}</form>
+      <div id="productDetails"></div>
+      <div id="productInfo" class="mt-4"></div>
+      <a
+        id="viewPurchase"
+        class="block w-full py-3 bg-white hidden hover:bg-green-800 text-green-400 text-center mt-4 mb-2 font-bold rounded-lg shadow-lg transition"
+        href=""
+        download="purchase.txt"
+        >View Purchasing</a
+      >
+
+      <div id="timerDisplay" class="text-green-500 hidden font-bold text-lg">
+        00:00
+      </div>
+
+      <div id="loader" class="hidden mt-4">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Button -->
+      <button
+        id="viewHistoryBtn"
+        class="w-full py-3 hidden bg-green-500 hover:bg-green-600 text-white mt-4 mb-2 font-bold rounded-lg shadow-lg transition"
+      >
+        View History
+      </button>
+
+      <!-- Holder for files -->
+      <div id="filesholder" class="mt-4 space-y-3"></div>
+    </div>
+    <script></script>
+
+    <script>
+      document.getElementById("LoggedInUser").innerText =`${sessionStorage.getItem("username")}`
+
+      
+      
+      let selecteduserEmail;
+      let selectedSecretKey;
+      let selectedRegion;
 
 
+      document.getElementById("loginForm").addEventListener("submit", async function(e) {
+        e.preventDefault();
+        
+        let formData = new FormData(this);
 
+        let email = formData.get("email");
 
-    
-
-    <form id="productForm" class="space-y-5 mt-6">
-      {% csrf_token %}
-     
-    </form>
-    <div id="productDetails"> </div>
-    <div id="productInfo" class="mt-4"></div>
-    <a id="viewPurchase" class="block w-full py-3 bg-white hidden  hover:bg-green-800 text-green-400 text-center  mt-4 mb-2 font-bold rounded-lg shadow-lg transition"
-      href=""  download="purchase.txt">View Purchasing</a>
-     <div id="loader" class=" hidden mt-4">
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-</div>
-    <!-- Button -->
-    <button id="viewHistoryBtn"
-    class="w-full py-3 hidden bg-green-500 hover:bg-green-600 text-white mt-4 mb-2 font-bold rounded-lg shadow-lg transition">
-    View History
-    </button>
-    
-    <!-- Holder for files -->
-    <div id="filesholder" class="mt-4 space-y-3"></div>
-  </div>
-
-  <script>
-    document.getElementById("LoggedInUser").innerText =`${sessionStorage.getItem("username")}`
-
-
-    let selecteduserEmail;
-    let selectedSecretKey;
-    let selectedRegion;
-    
-    document.querySelector("form").addEventListener("submit", async function (e) {
-      e.preventDefault();
-    
-      let emailInput = document.querySelector("[name='store_email']");
-      let passwordInput = document.querySelector("[name='store_password']");
-      let secretKeyInput = document.querySelector("[name='store_secretkey']");
-
-      let email = emailInput.value;
-      let password = passwordInput.value;
-      let secretKey = secretKeyInput.value;
-
-      console.log("Storing user:", email, password, secretKey);
-    
-      let response = await fetch("{% url 'razerusers' %}", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRFToken": "{{ csrf_token }}"
-        },
-        body: JSON.stringify({ store_email: email, store_password: password,store_secret_key:secretKey })
+        let checkUserExistance = await fetch("checkUserExist/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email })
       });
-    
-      let data = await response.json();
-    
-      if (response.status === 201) {
-        alert("Razer user stored successfully!");
-        emailInput.value = "";
-        passwordInput.value = "";
-        secretKeyInput.value = "";
-      } else {
-        alert("User already exists");
-        emailInput.value = "";
-        passwordInput.value = "";
-      }
-    
-      console.log(data);
-      fetchStoredUsers();
-    });
+
+        let checkData= await checkUserExistance.json();
+
+        if (checkData.exists) {
+          alert("User already exists");
+          return; 
+        }
 
 
-    let selectedUser;
-    async function fetchStoredUsers() {
-      const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        document.getElementById("loader2").classList.remove("hidden")
+        document.getElementById("loginForm").style.display = "none";
 
-      const response = await fetch("/razerusers/", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRFToken": csrftoken
+        let response = await fetch("start-login/", { method: "POST", body: formData });
+        
+        let data = await response.json();
+        if (data.status === "waiting_for_otp") {
+          alert("Login successful, please enter OTP from your email");
+          document.getElementById("otpForm").style.display = "block";
+          document.getElementById("loader2").classList.add("hidden")
+
+
+          setTimeout(() => {
+            fetch('/shutdown_automation/', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                // Add CSRF token if needed, or ensure @csrf_exempt is used
+              },
+              body: JSON.stringify({}) // Optional payload if needed
+            })
+            .then(response => response.json())
+            .then(data => {
+              console.log('Shutdown response:', data);
+            })
+            .catch(error => {
+              console.error('Error shutting down automation:', error);
+            });
+          }, 60000); // 60,000 milliseconds = 60 seconds
+          
+          
         }
       });
 
-      const users = await response.json();
 
-      // 🔥 Clear existing options except the first one
-      const select = document.getElementById("userSelect");
-      select.innerHTML = '<option value="">Select stored user</option>';
+      document.getElementById("otpForm").addEventListener("submit", async function(e) {
+        e.preventDefault();
 
+        document.getElementById("otpForm").style.display = "none";
+        document.getElementById("loader2").classList.remove("hidden")
 
-      users.forEach(user => {
-        const option = document.createElement("option");
-        option.className = "bg-gray-800 text-white";
-        option.value = `${user.store_email} ${user.store_password} ${user.store_secret_key}`;
-        option.textContent = `${user.store_email} ${user.store_password}`;
-        select.appendChild(option);
-      });
+        let formData = new FormData(this);
+        let response = await fetch("submit-otp/", { method: "POST", body: formData });
+        let data = await response.json();
+        if (data.status === "otp_and_authenticator_done") {
+          alert("Authenticator setup complete!\nEmail: " + data.email + "\nSecret: " + data.secret_key);
 
-      select.addEventListener("change", function () {
-        if (this.value) {
-          selectedUser = this.value.split(" ");
-          selecteduserEmail=selectedUser[0];
-          console.log(`Selected: ${this.value}`);
+          console.log("Storing user:",data.email, data.password, data.secret_key);
+
+              let storeResponse  = await fetch("{% url 'razerusers' %}", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "X-CSRFToken": csrftoken
+                },
+                body: JSON.stringify({ store_email: data.email, store_password: data.password,store_secret_key:data.secret_key })
+              });
+
+              let storeData  = await storeResponse.json();
+
+              if (storeResponse.status === 201) {
+                alert("Razer user stored successfully!");
+                document.getElementById("loginForm").style.display = "block";
+                document.getElementById("loader2").classList.add("hidden")
+                document.getElementById("loginForm").reset();
+                document.getElementById("otpForm").reset();
+              } 
+
+              console.log(data);
+              fetchStoredUsers();
         }
       });
-    }
-
-
-    // Call the function on page load
-    window.addEventListener("DOMContentLoaded", fetchStoredUsers);
-
-    document.getElementById("loginbtn").addEventListener("click", async function () {
-      const selectedValue = document.getElementById("userSelect").value;
-
-      if (!selectedValue) {
-        alert("Please select a user.");
-        return;
-      }
-      console.log("Selected user:", selectedUser);
-
-      email = selectedUser[0];
-      selecteduserEmail = email;
-      password = selectedUser[1];
-      secretKey = selectedUser[2];
-      selectedSecretKey=secretKey;
-
-      selectedRegion=document.getElementById("regionSelect").value
-
-      console.log("Using email:", email, "password:", password, "secretKey:", secretKey, "region:", selectedRegion);
-
-
-      {% comment %} const [email, password] = selectedValue.split(" ");
-      console.log("selected email:", email, "selected password:", password); {% endcomment %}
-      const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-
-      const response = await fetch("/run", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "X-CSRFToken": csrftoken
-        },
-        body: new URLSearchParams({
-          email: email,
-          password: password,
-          secretKey: secretKey
-        })
-      });
-
-      const text = await response.text();
-      const statusDiv = document.getElementById("loginStatus");
-      if (text.includes("successful")) {
-        document.getElementById("prodlinkheading").classList.remove("hidden");
-        document.getElementById("ProductLink").classList.remove("hidden");
-        document.getElementById("productFetchbtn").classList.remove("hidden");
-        {% comment %} document.getElementById("productQuantity").classList.remove("hidden"); {% endcomment %}
-        {% comment %} document.getElementById("buybtn").classList.remove("hidden"); {% endcomment %}
-        document.getElementById("userSelectionSection").classList.add("hidden");
-        document.getElementById("userForm").classList.add("hidden");
-        document.getElementById("Backbtn").classList.remove("hidden");
-
-
-        document.getElementById("regionSelection").classList.add("hidden");
-
-        document.getElementById("selectedLoggedInUser").classList.remove("hidden");
-        document.getElementById("selectedLoggedInUser").innerText = `Logged in as: ${email}`;
-       
-        statusDiv.innerHTML = `<p class="text-green-500 text-base font-medium">${text}</p>`;
-      } else {
-        statusDiv.innerHTML = `<p class="text-red-500 text-base font-medium" style="color:red">${text}</p>`;
-      }
-    });
 
 
 
-    let ProductName;
-    document.getElementById("productFetchbtn").addEventListener("click", async function () {
-      const productLink = document.getElementById("ProductLink").value;
-      const value = productLink.split("/catalog/")[1];
-      productName = value;
-      const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
 
-      const res = await fetch("/get-product-info", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRFToken": csrftoken
-        },
-        body: JSON.stringify({ product: value })
-      });
 
-      const data = await res.json();
-      const infoDiv = document.getElementById("productDetails");
 
-      if (data.error) {
-        infoDiv.innerHTML = `<p class="text-red-400">⚠️ ${data.error}</p>`;
-        return;
-      }
 
-      const productCheckboxes = data.products.map(p => `
-        <div class="flex items-center gap-4 mb-4">
-          <input type="checkbox" class="product-check w-5 h-5 text-green-500 bg-gray-800 border-2 border-green-500 rounded focus:ring-2 focus:ring-green-400" data-id="${p.productId}" data-vanity="${p.vanityName}">
-          <label class="text-white text-lg font-semibold">${p.vanityName}</label>
-          <input type="number" min="1" value="1"
-            class="product-qty w-20 p-2 text-white bg-gray-800 border border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
-        </div>
-      `).join("");
+      let selectedUser;
+      async function fetchStoredUsers() {
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-      infoDiv.innerHTML = `
-        <p class="text-white text-xl font-bold mb-2">Available Products:</p>
-        ${productCheckboxes}
-        <button id="buybtn" type="button"
-          class="w-full py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg shadow-lg transition mt-4">
-          Buy Selected
-        </button>
-      `;
-      document.getElementById("viewHistoryBtn").classList.remove("hidden");
-    });
-
-    document.addEventListener("click", async function (e) {
-     
-      document.getElementById("")
-      if (e.target && e.target.id === "buybtn") {
-        const selectedProducts = [];
-        document.getElementById("loader").classList.remove("hidden")
-        document.querySelectorAll(".product-check:checked").forEach(checkbox => {
-          const productId = checkbox.dataset.id;
-          const vanityName = checkbox.dataset.vanity;
-          const quantityInput = checkbox.parentElement.querySelector(".product-qty");
-          const quantity = quantityInput.value;
-
-          selectedProducts.push({ productId, vanityName, quantity });
+        const response = await fetch("/razerusers/", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": csrftoken
+          }
         });
 
-        if (selectedProducts.length === 0) {
-          alert("Please select at least one product.");
+        const users = await response.json();
+
+        // 🔥 Clear existing options except the first one
+        const select = document.getElementById("userSelect");
+        select.innerHTML = '<option value="">Select stored user</option>';
+
+
+        users.forEach(user => {
+          const option = document.createElement("option");
+          option.className = "bg-gray-800 text-white";
+          option.value = `${user.store_email} ${user.store_password} ${user.store_secret_key}`;
+          option.textContent = `${user.store_email} ${user.store_password}`;
+          select.appendChild(option);
+        });
+
+        select.addEventListener("change", function () {
+          if (this.value) {
+            selectedUser = this.value.split(" ");
+            selecteduserEmail=selectedUser[0];
+            console.log(`Selected: ${this.value}`);
+          }
+        });
+      }
+
+
+      // Call the function on page load
+      window.addEventListener("DOMContentLoaded", fetchStoredUsers);
+
+      document.getElementById("loginbtn").addEventListener("click", async function () {
+        const selectedValue = document.getElementById("userSelect").value;
+
+        if (!selectedValue) {
+          alert("Please select a user.");
           return;
         }
-        console.log("Selected products:", selectedProducts);
-        const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
-       
-        console.log("Data before form operation:", { products: selectedProducts, productName: productName, userEmail: selecteduserEmail, secretKey: selectedSecretKey });
+        console.log("Selected user:", selectedUser);
 
-        const res = await fetch("/form-operation", {
+        email = selectedUser[0];
+        selecteduserEmail = email;
+        password = selectedUser[1];
+        secretKey = selectedUser[2];
+        selectedSecretKey=secretKey;
+
+        selectedRegion=document.getElementById("regionSelect").value
+
+        console.log("Using email:", email, "password:", password, "secretKey:", secretKey, "region:", selectedRegion);
+
+
+        {% comment %} const [email, password] = selectedValue.split(" ");
+        console.log("selected email:", email, "selected password:", password); {% endcomment %}
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        const response = await fetch("/run", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-CSRFToken": csrftoken
+          },
+          body: new URLSearchParams({
+            email: email,
+            password: password,
+            secretKey: secretKey
+          })
+        });
+
+        const text = await response.text();
+        const statusDiv = document.getElementById("loginStatus");
+        if (text.includes("successful")) {
+          document.getElementById("prodlinkheading").classList.remove("hidden");
+          document.getElementById("ProductLink").classList.remove("hidden");
+          document.getElementById("productFetchbtn").classList.remove("hidden");
+          {% comment %} document.getElementById("productQuantity").classList.remove("hidden"); {% endcomment %}
+          {% comment %} document.getElementById("buybtn").classList.remove("hidden"); {% endcomment %}
+          document.getElementById("userSelectionSection").classList.add("hidden");
+          document.getElementById("userForm").classList.add("hidden");
+          document.getElementById("Backbtn").classList.remove("hidden");
+
+
+          document.getElementById("regionSelection").classList.add("hidden");
+
+          document.getElementById("selectedLoggedInUser").classList.remove("hidden");
+          document.getElementById("selectedLoggedInUser").innerText = `Logged in as: ${email}`;
+
+          statusDiv.innerHTML = `<p class="text-green-500 text-base font-medium">${text}</p>`;
+        } else {
+          statusDiv.innerHTML = `<p class="text-red-500 text-base font-medium" style="color:red">${text}</p>`;
+        }
+      });
+
+
+
+      let ProductName;
+      document.getElementById("productFetchbtn").addEventListener("click", async function () {
+        const productLink = document.getElementById("ProductLink").value;
+        const value = productLink.split("/catalog/")[1];
+        productName = value;
+        const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+
+        const res = await fetch("/get-product-info", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             "X-CSRFToken": csrftoken
           },
-          body: JSON.stringify({ products: selectedProducts, productName: productName, userEmail: selecteduserEmail, secretKey: selectedSecretKey, regionId: selectedRegion })
+          body: JSON.stringify({ product: value })
         });
 
-        const result = await res.json();
-        console.log("Result from /form-operation:", result);
-        if (result.error) {
-          if(result.error.includes("70600")){
-           
-            document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Not Enough Coins</p>`;
+        const data = await res.json();
+        const infoDiv = document.getElementById("productDetails");
+
+        if (data.error) {
+          infoDiv.innerHTML = `<p class="text-red-400">⚠️ ${data.error}</p>`;
+          return;
+        }
+
+        const productCheckboxes = data.products.map(p => `
+          <div class="flex items-center gap-4 mb-4">
+            <input type="checkbox" class="product-check w-5 h-5 text-green-500 bg-gray-800 border-2 border-green-500 rounded focus:ring-2 focus:ring-green-400" data-id="${p.productId}" data-vanity="${p.vanityName}">
+            <label class="text-white text-lg font-semibold">${p.vanityName}</label>
+            <input type="number" min="1" value="1"
+              class="product-qty w-20 p-2 text-white bg-gray-800 border border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+          </div>
+        `).join("");
+
+        infoDiv.innerHTML = `
+          <p class="text-white text-xl font-bold mb-2">Available Products:</p>
+          ${productCheckboxes}
+          <button id="buybtn" type="button"
+            class="w-full py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg shadow-lg transition mt-4">
+            Buy Selected
+          </button>
+        `;
+        document.getElementById("viewHistoryBtn").classList.remove("hidden");
+      });
+
+      document.addEventListener("click", async function (e) {
+
+        document.getElementById("")
+        if (e.target && e.target.id === "buybtn") {
+          const selectedProducts = [];
+          document.getElementById("loader").classList.remove("hidden")
+          document.getElementById("timerDisplay").classList.remove("hidden")
+          startTimer();
+          document.querySelectorAll(".product-check:checked").forEach(checkbox => {
+            const productId = checkbox.dataset.id;
+            const vanityName = checkbox.dataset.vanity;
+            const quantityInput = checkbox.parentElement.querySelector(".product-qty");
+            const quantity = quantityInput.value;
+
+            selectedProducts.push({ productId, vanityName, quantity });
+          });
+
+          if (selectedProducts.length === 0) {
+            alert("Please select at least one product.");
+            return;
           }
-          else if(result.error.includes("70607")){
-            document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Region Id mismatched</p>`;
-          }
-          else if(result.error.includes("70628")){
-            document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Product out of stock</p>`;
-          }
-          else if(result.error.includes("70613")){
-            document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Transaction amount has exceeded the maximum amount allowed</p>`;
+          console.log("Selected products:", selectedProducts);
+          const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+
+          console.log("Data before form operation:", { products: selectedProducts, productName: productName, userEmail: selecteduserEmail, secretKey: selectedSecretKey });
+
+          const res = await fetch("/form-operation", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": csrftoken
+            },
+            body: JSON.stringify({ products: selectedProducts, productName: productName, userEmail: selecteduserEmail, secretKey: selectedSecretKey, regionId: selectedRegion })
+          });
+
+          const result = await res.json();
+          console.log("Result from /form-operation:", result);
+          if (result.error) {
+            if(result.error.includes("70600")){
+
+              document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Not Enough Coins</p>`;
+              stopTimer();
+            }
+            else if(result.error.includes("70607")){
+              document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Region Id mismatched</p>`;
+              stopTimer();
+            }
+            else if(result.error.includes("70628")){
+              document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Product out of stock</p>`;
+              stopTimer();
+            }
+            else if(result.error.includes("70613")){
+              document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Transaction amount has exceeded the maximum amount allowed</p>`;
+              stopTimer();
+            }
+            document.getElementById("loader").classList.add("hidden")
+            stopTimer();
+            {% comment %} document.getElementById("productInfo").innerHTML = `<p class="text-red-400"> ${result.error}</p>`; {% endcomment %}
+            const  currentPurchase=document.getElementById("viewPurchase")
+            currentPurchase.classList.remove("hidden")
+            currentPurchase.href=`http://127.0.0.1:8000${result.download_url}`
+            currentPurchase.setAttribute("download", `purchase${result.download_url.split("/")[2]}.txt`);
+            console.log("Error in result:",result.error)
+            return;
           }
           document.getElementById("loader").classList.add("hidden")
-          {% comment %} document.getElementById("productInfo").innerHTML = `<p class="text-red-400"> ${result.error}</p>`; {% endcomment %}
-          const  currentPurchase=document.getElementById("viewPurchase")
+          const currentPurchase=document.getElementById("viewPurchase")
           currentPurchase.classList.remove("hidden")
           currentPurchase.href=`http://127.0.0.1:8000${result.download_url}`
           currentPurchase.setAttribute("download", `purchase${result.download_url.split("/")[2]}.txt`);
-          console.log("Error in result:",result.error)
-          return;
+          document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Purchase Successful</p>`;
+          stopTimer();
         }
-        document.getElementById("loader").classList.add("hidden")
-        const currentPurchase=document.getElementById("viewPurchase")
-        currentPurchase.classList.remove("hidden")
-        currentPurchase.href=`http://127.0.0.1:8000${result.download_url}`
-        currentPurchase.setAttribute("download", `purchase${result.download_url.split("/")[2]}.txt`);
-        document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Purchase Successful</p>`;
-        
-      }
-    });
+      });
 
 
-    document.getElementById("Backbtn").addEventListener("click", function () {
-      document.getElementById("userSelectionSection").classList.remove("hidden");
-      document.getElementById("userForm").classList.remove("hidden");
-      document.getElementById("Backbtn").classList.add("hidden");
-      document.getElementById("prodlinkheading").classList.add("hidden");
-      document.getElementById("ProductLink").classList.add("hidden");
-      document.getElementById("productFetchbtn").classList.add("hidden");
-      document.getElementById("productInfo").innerHTML = "";
-      document.getElementById("productDetails").innerHTML = "";
-      document.getElementById("loginStatus").innerHTML = "";
-      document.getElementById("viewPurchase").classList.add("hidden")
-      document.getElementById("ProductLink").value = "";
-
-      
-      document.getElementById("selectedLoggedInUser").classList.add("hidden");
-      document.getElementById("selectedLoggedInUser").innerText = "";
-
-      document.getElementById("regionSelection").classList.remove("hidden");
-      
+      document.getElementById("Backbtn").addEventListener("click", function () {
+        document.getElementById("userSelectionSection").classList.remove("hidden");
+        document.getElementById("userForm").classList.remove("hidden");
+        document.getElementById("Backbtn").classList.add("hidden");
+        document.getElementById("prodlinkheading").classList.add("hidden");
+        document.getElementById("ProductLink").classList.add("hidden");
+        document.getElementById("productFetchbtn").classList.add("hidden");
+        document.getElementById("productInfo").innerHTML = "";
+        document.getElementById("productDetails").innerHTML = "";
+        document.getElementById("loginStatus").innerHTML = "";
+        document.getElementById("viewPurchase").classList.add("hidden")
+        document.getElementById("ProductLink").value = "";
 
 
-      {% comment %} Hiding files and view history button {% endcomment %}
-      const filesHolder = document.getElementById("filesholder");
-      filesHolder.innerHTML = "";
-      document.getElementById("viewHistoryBtn").classList.add("hidden");
-    });
+        document.getElementById("selectedLoggedInUser").classList.add("hidden");
+        document.getElementById("selectedLoggedInUser").innerText = "";
 
-    currentPurchase=document.getElementById("viewPurchase")
-    loader=document.getElementById("loader")
-    currentPurchase.addEventListener("click", function () {
-     currentPurchase.classList.add("hidden")
-     loader.classList.add("hidden")
-    });
+        document.getElementById("regionSelection").classList.remove("hidden");
+
+
+
+        {% comment %} Hiding files and view history button {% endcomment %}
+        const filesHolder = document.getElementById("filesholder");
+        filesHolder.innerHTML = "";
+        document.getElementById("viewHistoryBtn").classList.add("hidden");
+
+
+        {% comment %} Hide Timer and reset {% endcomment %}
+        document.getElementById("timerDisplay").classList.add("hidden")
+        resetTimer();
+      });
+
+      currentPurchase=document.getElementById("viewPurchase")
+      loader=document.getElementById("loader")
+      currentPurchase.addEventListener("click", function () {
+       currentPurchase.classList.add("hidden")
+       loader.classList.add("hidden")
+      });
 
 
 
 
-    {% comment %} FILE HISTORY {% endcomment %}
+      {% comment %} FILE HISTORY {% endcomment %}
 
-    document.getElementById("viewHistoryBtn").addEventListener("click", async () => {
-      const filesHolder = document.getElementById("filesholder");
-      filesHolder.innerHTML = "<p class='text-gray-400'>Loading...</p>";
-      console.log("Fetching files for user:", selecteduserEmail);
-      try {
-        // 🔹 Call backend API (replace with your actual endpoint)
-        const response = await fetch("/get-user-files/", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: selecteduserEmail })
-        });
-        const data = await response.json();
-  
-        filesHolder.innerHTML = ""; // clear loader
-  
-        if (data.files && data.files.length > 0) {
-          data.files.forEach(file => {
-            const fileDiv = document.createElement("div");
-            fileDiv.className = "p-3 bg-gray-100 rounded-lg flex justify-between items-center shadow";
-  
-            fileDiv.innerHTML = `
-            <p class="font-medium">${file.uploaded_at}</p>
-            {% comment %} <p class="font-medium">${file.file_name}</p> {% endcomment %}
-            <div class="space-x-2">
-              <a href="${file.download_url}" target="_blank" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">View</a>
-              <a href="${file.download_url}" download class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">Download</a>
-            </div>
-          `;
-  
-            filesHolder.appendChild(fileDiv);
+      document.getElementById("viewHistoryBtn").addEventListener("click", async () => {
+        const filesHolder = document.getElementById("filesholder");
+        filesHolder.innerHTML = "<p class='text-gray-400'>Loading...</p>";
+        console.log("Fetching files for user:", selecteduserEmail);
+        try {
+          // 🔹 Call backend API (replace with your actual endpoint)
+          const response = await fetch("/get-user-files/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: selecteduserEmail })
           });
-        } else {
-          filesHolder.innerHTML = "<p class='text-red-500'>No files found.</p>";
+          const data = await response.json();
+
+          filesHolder.innerHTML = ""; // clear loader
+
+          if (data.files && data.files.length > 0) {
+            data.files.forEach(file => {
+              const fileDiv = document.createElement("div");
+              fileDiv.className = "p-3 bg-gray-100 rounded-lg flex justify-between items-center shadow";
+
+              fileDiv.innerHTML = `
+              <p class="font-medium">${file.uploaded_at}</p>
+              {% comment %} <p class="font-medium">${file.file_name}</p> {% endcomment %}
+              <div class="space-x-2">
+                <a href="${file.download_url}" target="_blank" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">View</a>
+                <a href="${file.download_url}" download class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">Download</a>
+              </div>
+            `;
+
+              filesHolder.appendChild(fileDiv);
+            });
+          } else {
+            filesHolder.innerHTML = "<p class='text-red-500'>No files found.</p>";
+          }
+        } catch (err) {
+          console.error(err);
+          filesHolder.innerHTML = "<p class='text-red-500'>Error fetching files.</p>";
         }
-      } catch (err) {
-        console.error(err);
-        filesHolder.innerHTML = "<p class='text-red-500'>Error fetching files.</p>";
+      });
+
+
+      {% comment %} ==========Timer========== {% endcomment %}
+      let timerInterval;
+      let seconds = 0;
+
+      function startTimer() {
+        seconds = 0;
+        timerInterval = setInterval(() => {
+          seconds++;
+          const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+          const secs = String(seconds % 60).padStart(2, '0');
+          document.getElementById("timerDisplay").textContent = `${mins}:${secs}`;
+        }, 1000);
       }
-    });
-  </script>
 
+      function stopTimer() {
+        clearInterval(timerInterval);
+      }
 
+      function resetTimer() {
+        stopTimer(); // Stop if running
+        seconds = 0;
+        document.getElementById("timerDisplay").textContent = "00:00";
+      }
+    </script>
 
-
-
-
-
-
-
-
-</body>
-
+    <script>
+      // Read csrftoken from cookie
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          const cookies = document.cookie.split(";");
+          for (let cookie of cookies) {
+            cookie = cookie.trim();
+            if (cookie.startsWith(name + "=")) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+      const csrftoken = getCookie("csrftoken");
+    </script>
+  </body>
 </html>

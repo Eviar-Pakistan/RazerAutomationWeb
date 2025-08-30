@@ -1,0 +1,7 @@
+{
+    "[django-html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"html.format.contentUnformatted": ""
+
+}

@@ -15,6 +15,11 @@ urlpatterns = [
     path("download-results/", views.download_results, name="download_results"),
     path("save-and-store-file/", views.save_and_store_file, name="save_and_store_file"),
     path("get-user-files/", views.get_user_files, name="get_user_files"),
+    path("start-login/", views.start_login, name="start-login"),
+    path("submit-otp/", views.submit_otp, name="submit-otp"),
+    path("checkUserExist/", views.check_user, name="checkUserExists"),
+    path("shutdown_automation/", views.shutdown_automation, name="shutdown_automation"),
+
 
 ]
 

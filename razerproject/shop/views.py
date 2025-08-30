@@ -18,6 +18,10 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.core.files.base import ContentFile
 from django.contrib.auth import login
+from rest_framework.authentication import SessionAuthentication
+from asgiref.sync import sync_to_async
+from django.contrib.auth.decorators import login_required
+from . import otpsetup_login
 # Django view for user signup
 def django_user_signup_interface(request):
     return render(request, "django_user_signup.html")
@@ -66,6 +70,11 @@ def django_user_login_view(request):
 def login_view(request):
     return render(request, "login.html")
 
+
+
+
+
+# ==========================Logs in user and stores cookies and user important data===================================
 def run_view(request):
     if request.method == "POST":
         email = request.POST.get("email")
@@ -94,8 +103,12 @@ def run_view(request):
 
     return HttpResponse("Invalid request")
 
+
+@login_required
 def form_view(request):
     return render(request, "form.html")
+
+#==========================Buying and Storing Product===================================
 def form_view_operation(request):
     if request.method == "POST":
         try:
@@ -139,6 +152,10 @@ def form_view_operation(request):
     return HttpResponse("Invalid request", status=400)
 
 
+
+
+
+# =========================Getting Product Info===================================
 def get_product_info(request):
     if request.method == "POST":
         body = json.loads(request.body)
@@ -170,25 +187,81 @@ def download_results(request):
         return response
     else:
         return HttpResponse("File not found.", status=404)
+    
+
+# =========================LOGIN USER FOR MFA SETUP============================
+automation_session = {"logged_in": False}
 
 
+@csrf_exempt
+def start_login(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+
+        try:
+            otpsetup_login.login(email, password)
+            automation_session["logged_in"] = True
+            return JsonResponse({"status": "waiting_for_otp"})
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+
+
+@csrf_exempt
+def submit_otp(request):
+    if request.method == "POST":
+        code = request.POST.get("otp")
+
+        try:
+            result = otpsetup_login.submit_email_otp_and_setup(code)
+            return JsonResponse({"status": "otp_and_authenticator_done", **result})
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+
+@csrf_exempt
+def shutdown_automation(request):
+    if request.method == "POST":
+        try:
+            otpsetup_login.close()
+            automation_session["logged_in"] = False
+            return JsonResponse({"status": "shutdown_successful"})
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+# =========================Checking User===============================================
+
+
+@csrf_exempt
+def check_user(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        email = data.get("email")
+
+        if RazerUser.objects.filter(email=email).exists():
+            return JsonResponse({"exists": True, "message": "User already exists"})
+        else:
+            return JsonResponse({"exists": False, "message": "User does not exist"})
+    return JsonResponse({"error": "POST required"}, status=400)
+
+
+
+# =========================Storing Razer User + Fetching it============================
 class RazerUserListCreateView(generics.ListCreateAPIView):
     serializer_class = RazerUserSerializer
-    permission_classes = [permissions.AllowAny]
+    authentication_classes = [SessionAuthentication]        
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        # return only the RazerUsers of the logged-in user
         return RazerUser.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
-        print(self.request.data.get("store_email"))
-        if RazerUser.objects.filter(email=self.request.data.get("store_email")).exists():
-           raise ValidationError("Email already exists")
-        try:
-             serializer.save(user=self.request.user)
-        except Exception as e:
-            print(e)
+        print("DEBUG REQUEST DATA:", self.request.data)
+        serializer.save(user=self.request.user)
 
+
+
+
+
+# =========================Saving and Storing File============================
 @csrf_exempt
 def save_and_store_file(request):
     if request.method == "POST":
@@ -211,6 +284,10 @@ def save_and_store_file(request):
             "download_url": file_history.get_download_url()
         })
 
+
+
+
+# =========================Getting User Files============================
 @csrf_exempt
 def get_user_files(request):
     if request.method == "POST":
@@ -246,3 +323,9 @@ def get_user_files(request):
             return JsonResponse({"error": str(e)}, status=400)
 
     return JsonResponse({"error": "Invalid request method"}, status=405)
+
+
+
+
+
+
