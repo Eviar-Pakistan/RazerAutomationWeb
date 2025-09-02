@@ -7,7 +7,7 @@ import json
 import random
 import string
 
-
+IP="127.0.0.1:8000"
 errorString=""
 # Getting data from frontend-->views.py-->main2.py
 if __name__ == "__main__":
@@ -197,7 +197,7 @@ def generate_random_string(length=6):
     return ''.join(random.choices(characters, k=length))
 
 random_string = generate_random_string()
-upload_url = "http://127.0.0.1:8000/save-and-store-file/"
+upload_url = f"http://{IP}/save-and-store-file/"
 
 with open(output_file, "r") as f:
     file_content = f.read()
@@ -223,7 +223,7 @@ except Exception as e:
 
 
 print(f"\n All results saved in {output_file}")
-print("Download here: http://127.0.0.1:8000/download-results/")
+print(f"Download here: http://{IP}/download-results/")
 
 
 
