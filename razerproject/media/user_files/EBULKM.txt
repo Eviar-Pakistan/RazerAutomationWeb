@@ -8,8 +8,8 @@ RazerID:fastVividTangeloJET216
 Product Details
 ===================
 
-Product ID: 22430
-Vanity Name: 10 Coins
+Product ID: 23041
+Vanity Name: 30000 + 10500 UC
 Quantity: 1
 
 ===================
@@ -17,6 +17,6 @@ Transaction Results
 ===================
 
 Purchase 1 Failed
-{"code":70600,"message":"Invalid Request"}
+{"code":400,"message":"Bad Request"}
 
 

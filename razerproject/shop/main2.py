@@ -7,6 +7,42 @@ import json
 import random
 import string
 
+
+# region = {
+#     "MY": 1,
+#     "GLOBAL": 2,
+#     "IN": 4,
+#     "SG": 5,
+#     "AU": 6,
+#     "ID": 7,
+#     "PH": 8,
+#     "VN": 9,
+#     "TH": 10,
+#     "US": 12,
+#     "BR": 13,
+#     "TW": 14,
+#     "NZ": 15,
+#     "EU": 16,
+#     "HK": 17,
+#     "TR": 18,
+#     "MM": 19,
+#     "CA": 20,
+#     "MX": 21,
+#     "CO": 22,
+#     "PE": 23,
+#     "AR": 24,
+#     "CL": 25,
+#     "KH": 26,
+#     "JP": 27,
+#     "GLOBALZH": 28,
+#     "PK": 29,
+#     "BO": 30,
+#     "GT": 31,
+#     "KR": 32,
+#     "GLOBALRU": 36,
+#     "BD": 37,
+# }
+
 IP="127.0.0.1:8000"
 errorString=""
 # Getting data from frontend-->views.py-->main2.py
@@ -21,6 +57,8 @@ if __name__ == "__main__":
     print("[Main2] Product Name:", productName)
     print("[Main2] Email Name:", userEmail)
     print("[Main2] Secret Key:", secretKey)
+    print("[Main2] region:",regionId)
+  
     # Loading session to get cookies etc
     with open("session.pkl", "rb") as f:
       session = pickle.load(f)
@@ -33,9 +71,9 @@ if __name__ == "__main__":
       access_token = session_data.get("access_token")
       uuid = session_data.get("uuid")
 
-    # print("Session Loaded From main2.py:", session.cookies.get_dict())
-    # print("Access Token  From main2.py:", access_token)
-    # print("UUID  From main2.py:", uuid)
+    print("Session Loaded From main2.py:", session.cookies.get_dict())
+    print("Access Token  From main2.py:", access_token)
+    print("UUID  From main2.py:", uuid)
 
 
     # Loading user info
@@ -75,8 +113,9 @@ if __name__ == "__main__":
         print("-" * 30)
 
 
-        
+        # ========================================OTP========================================
         finalcode = pyotp.TOTP(f"{secretKey}").now()
+        print("[MAIN2] OTP",finalcode)
 
         otp_url = "https://razer-otptoken-service.razer.com/totp/post"
 

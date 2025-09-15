@@ -5,6 +5,7 @@ class RazerUserSerializer(serializers.ModelSerializer):
     store_email = serializers.CharField(source="email")
     store_password = serializers.CharField(source="password")
     store_secret_key=serializers.CharField(source="secret_key")
+    region_number=serializers.IntegerField(source="regionNumber")
     class Meta:
         model = RazerUser
-        fields = ['id', 'store_email', 'store_password','store_secret_key']  
+        fields = ['id', 'store_email', 'store_password','store_secret_key',"region_number"]  

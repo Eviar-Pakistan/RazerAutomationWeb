@@ -5,7 +5,8 @@ class RazerUser(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="razer_users",)
     email = models.CharField(max_length=255,unique=True)  
     password = models.CharField(max_length=255)
-    secret_key= models.CharField(max_length=255,null=True,blank=True)  
+    secret_key= models.CharField(max_length=255,null=True,blank=True) 
+    regionNumber=models.IntegerField(null=True,blank=True) 
 
     created_at = models.DateTimeField(auto_now_add=True)
 

@@ -6,6 +6,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="csrf-token" content="{{ csrf_token }}" />
 </head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
   span {
     height: 20px;
@@ -63,6 +64,39 @@
       transform: rotate(0deg);
     }
   }
+
+
+  /* Custom styles for the Swal modal */
+  .custom-swal-popup {
+    background-color: #111827 !important; /* gray-900 */
+    border: 2px solid #4ade80 !important; /* green-400 */
+    border-radius: 12px !important;
+  }
+  .custom-swal-title, .custom-swal-html-container {
+    color: white !important;
+  }
+  .custom-swal-confirm {
+    background-color: #4ade80 !important; /* green-400 */
+    color: #111827 !important; /* text dark for contrast */
+    border-radius: 8px !important;
+    padding: 8px 20px !important;
+  }
+  .custom-swal-confirm:hover {
+    background-color: #22c55e !important; /* darker green */
+  }
+
+  .num-input::-webkit-inner-spin-button,
+  .num-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  .num-input {
+    -moz-appearance: textfield;
+  }
+
+
 </style>
 
 <body class="bg-gray-900 flex items-center justify-center min-h-screen relative">
@@ -80,67 +114,87 @@
       class="p-3 rounded-md bg-red-500 absolute font-bold absolute top-1 left-1 hidden text-white text-base">
       <p>Back</p>
     </div>
-    <div id="userForm">
-      <form id="loginForm">
-        <h1 class="text-2xl font-bold text-white text-left mb-6">
-          Store Razer User
-        </h1>
-
-        <label class="block text-white text-xl mt-4 mb-2" for="user_email">Enter user email</label>
-        <input autocomplete="off" id="user_email" type="email" name="email" placeholder="Email" required
-          class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
-        <label class="block text-white text-xl mt-4 mb-2" for="user_password">Enter user password</label>
-        <input id="user_password" type="password" name="password" placeholder="Password" autocomplete="new-password"
-          required
-          class="w-full p-4  mt-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
-        <button
-          class="w-full py-3 bg-green-500 hover:bg-green-600 text-white my-8 font-bold rounded-lg shadow-lg transition"
-          type="submit">Login</button>
-
-      </form>
-      <div id="loader2" class="top-[0] hidden ml-10 mt-4 mb-4">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <form id="otpForm" style="display: none">
-        <label class="block text-white text-xl mt-4 mb-2" for="user_otp">Enter otp that you have got.</label>
-        <input id="user_otp" type="text" name="otp" maxlength="6" placeholder="Enter 6-digit OTP" required
-          class="w-full p-4  mt-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
-        <button
-          class="w-full py-3 bg-green-500 hover:bg-green-600 text-white my-8 font-bold rounded-lg shadow-lg transition"
-          type="submit">Submit OTP</button>
-      </form>
-    </div>
 
 
-    <form id="userForm2" class="hidden">
+    
+    <form id="userForm2" class="">
       {% csrf_token %}
-
+      <h1 class="text-2xl font-bold text-white text-left mb-6">
+        Store Razer User
+      </h1>
       <label class="block text-white text-xl mt-4 mb-2" for="store_email">Enter user email</label>
-      <input type="text" name="store_email"
+      <input type="text" name="store_email" id="store_email"
         class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
 
       <label class="block text-white text-xl mt-4 mb-2" for="store_password">Enter user password</label>
-      <input type="text" name="store_password"
+      <input type="text" name="store_password" id="store_password"
         class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
       <label class="block text-white text-xl mt-4 mb-2" for="store_password">Enter secret key</label>
-      <input type="text" name="store_secretkey"
+      <input type="text" name="store_secretkey" id="store_secretkey"
         class="w-full p-4 text-white bg-transparent border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
+
+       <div id="">
+        
+      
+        <label class="block text-white text-xl mt-4 mb-2" for="store_password">Select region</label>
+        <select id="regionSelect" required   class="w-full p-4       text-white bg-gray-800 border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+          <option value="">Select Region</option>
+          <option value="1">MY:1</option>
+          <option value="2">GLOBAL:2</option>
+          <option value="4">IN:4</option>
+          <option value="5">SG:5</option>
+          <option value="6">AU:6</option>
+          <option value="7">ID:7</option>
+          <option value="8">PH:8</option>
+          <option value="9">VN:9</option>
+          <option value="10">TH:10</option>
+          <option value="12">US:12</option>
+          <option value="13">BR:13</option>
+          <option value="14">TW:14</option>
+          <option value="15">NZ:15</option>
+          <option value="16">EU:16</option>
+          <option value="17">HK:17</option>
+          <option value="18">TR:18</option>
+          <option value="19">MM:19</option>
+          <option value="20">CA:20</option>
+          <option value="21">MX:21</option>
+          <option value="22">CO:22</option>
+          <option value="23">PE:23</option>
+          <option value="24">AR:24</option>
+          <option value="25">CL:25</option>
+          <option value="26">KH:26</option>
+          <option value="27">JP:27</option>
+          <option value="28">GLOBALZH:28</option>
+          <option value="29">PK:29</option>
+          <option value="30">BO:30</option>
+          <option value="31">GT:31</option>
+          <option value="32">KR:32</option>
+          <option value="36">GLOBALRU:36</option>
+          <option value="37">BD:37</option>
+        </select>
+
+        <p class="text-white text-lg mt-4">How to find region of account ?</p>
+        <p class="text-white text-lg  mb-2">Login to  gold razer and look at URL</p>
+        <img src="https://i.ibb.co/dwdtJhZf/urlsample2.png" class=" h-10 object-contain  mt-2">
+
+        
+      </div> 
       <button type="submit"
-        class="w-full py-3 bg-green-500 hover:bg-green-600 text-white my-8 font-bold rounded-lg shadow-lg transition">
-        Store
+        class="w-full bg-green-500 hover:bg-green-600 text-white py-3 mt-8 font-bold rounded-lg shadow-lg transition">
+        Setup OTP
       </button>
     </form>
-    <div id="regionUserSelectionDiv" class="hidden">
-      <div id="regionSelection">
+
+  
+    <p id="otpCode" class="my-2 text-xl text-white font-bold"></p>
+
+    <button id="StoreUserbtn" class="hidden w-full bg-green-500 hover:bg-green-600 text-white py-3 mt-8 font-bold rounded-lg shadow-lg transition">
+        Store User
+    </button>
+    
+   
+    <div id="regionUserSelectionDiv" class="">
+      {% comment %} <div id="regionSelection">
         <h1 class="text-2xl font-bold text-white text-left mb-6 mt-6">
           Select Region
         </h1>
@@ -150,7 +204,7 @@
           <option value="2">USA:2</option>
           <option value="29">PK:29</option>
         </select>
-      </div>
+      </div> {% endcomment %}
 
       <div class="mt-4" id="userSelectionSection" class="">
         <h1 class="text-2xl font-bold text-white text-left mb-6">
@@ -211,7 +265,7 @@
       00:00
     </div>
 
-    <div id="loader" class="hidden mt-4">
+    <div id="loader" class="hidden mt-4 ml-10">
       <span></span>
       <span></span>
       <span></span>
@@ -244,103 +298,119 @@
     let selectedRegion;
 
 
-    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+    document.getElementById("userForm2").addEventListener("submit", async function (e) {
       e.preventDefault();
-
+    
       let formData = new FormData(this);
+      let email = formData.get("store_email");
+      
+      try {
 
-      let email = formData.get("email");
+        console.log("Checking if user exists:", email);
 
-      let checkUserExistance = await fetch("checkUserExist/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email })
-      });
+        let checkUserExistance = await fetch("checkUserExist/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email })
+        });
+    
+        let checkData = await checkUserExistance.json();
+    
+        if (checkData.exists) {
+          console.log("User already exists");
+          alert("User already exists");
+        
+          return;
+        }
+        else{
 
-      let checkData = await checkUserExistance.json();
+          console.log("User doesnot exist already")
+          console.log("Getting OTP from PY OTP")
 
-      if (checkData.exists) {
-        alert("User already exists");
+          secret_key=formData.get("store_secretkey")
+          console.log("Secret key:", secret_key)
+
+          let getOtpResponse = await fetch("send-secretKey-getOtp/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ secret_key: secret_key })
+          });
+
+          let getOtpData = await getOtpResponse.json();
+
+          console.log("Response from OTP fetch:", getOtpData);
+
+          if(getOtpData.otp){
+           console.log("Got OTP from PY OTP:", getOtpData.otp)
+           document.getElementById("otpCode").innerText = `Your OTP is: [ ${getOtpData.otp} ].\n Please enter this OTP in the Razer app for authenticator setup`;
+           document.getElementById("StoreUserbtn").classList.remove("hidden")
+           document.getElementById("userForm2").classList.add("hidden")
+          }
+          else{
+            alert(getOtpData.error)
+            return;
+          }
+        } 
+      }   
+      catch (error) {
+        console.error("Error checking user existence:", error);
+        alert("An error occurred while checking user existence.");
         return;
       }
+    })
 
+    document.getElementById("StoreUserbtn").addEventListener("click", async function () {
+      let form = document.getElementById("userForm2");
+      let data = {
+        email: form.store_email.value,
+        password: form.store_password.value,
+        secret_key: form.store_secretkey.value,
+        region:form.regionSelect.value
+      };
+     
+      console.log("Storing User Data==>",data)
 
-      document.getElementById("loader2").classList.remove("hidden")
-      document.getElementById("loginForm").style.display = "none";
+      const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-      let response = await fetch("start-login/", { method: "POST", body: formData });
-
-      let data = await response.json();
-      if (data.status === "waiting_for_otp") {
-        alert("Login successful, please enter OTP from your email");
-        document.getElementById("otpForm").style.display = "block";
-        document.getElementById("loader2").classList.add("hidden")
-
-
-        setTimeout(() => {
-          fetch('shutdown_automation/', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              // Add CSRF token if needed, or ensure @csrf_exempt is used
-            },
-            body: JSON.stringify({}) // Optional payload if needed
-          })
-            .then(response => response.json())
-            .then(data => {
-              console.log('Shutdown response:', data);
-            })
-            .catch(error => {
-              console.error('Error shutting down automation:', error);
-            });
-        }, 60000); // 60,000 milliseconds = 60 seconds
-
-
-      }
+    let storeResponse = await fetch("{% url 'razerusers' %}", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": csrftoken
+      },
+      body: JSON.stringify({ store_email: data.email, store_password: data.password, store_secret_key: data.secret_key,region_number:parseInt(data.region) })
     });
+
+    let storeData = await storeResponse.json();
+
+    if (storeResponse.status === 201) {
+      alert("Razer user stored successfully!");
+      document.getElementById("StoreUserbtn").classList.add("hidden")
+      document.getElementById("otpCode").classList.add("hidden")
+      document.getElementById("regionUserSelectionDiv").classList.remove("hidden")
+      document.getElementById("userForm2").reset();
+      document.getElementById("userSelect").classList.remove("hidden")
     
+      
+    }
+
+    console.log(data);
+    fetchStoredUsers();
+
+    
+
+    })
+     
+
+   
+   
+
+      
+
 
     let url="127.0.0.1:8000"
 
-    document.getElementById("otpForm").addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      document.getElementById("otpForm").style.display = "none";
-      document.getElementById("loader2").classList.remove("hidden")
-
-      let formData = new FormData(this);
-      let response = await fetch("submit-otp/", { method: "POST", body: formData });
-      let data = await response.json();
-      if (data.status === "otp_and_authenticator_done") {
-        alert("Authenticator setup complete!\nEmail: " + data.email + "\nSecret: " + data.secret_key);
-
-        console.log("Storing user:", data.email, data.password, data.secret_key);
-
-        let storeResponse = await fetch("{% url 'razerusers' %}", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-CSRFToken": csrftoken
-          },
-          body: JSON.stringify({ store_email: data.email, store_password: data.password, store_secret_key: data.secret_key })
-        });
-
-        let storeData = await storeResponse.json();
-
-        if (storeResponse.status === 201) {
-          alert("Razer user stored successfully!");
-          document.getElementById("loginForm").style.display = "block";
-          document.getElementById("loader2").classList.add("hidden")
-          document.getElementById("loginForm").reset();
-          document.getElementById("otpForm").reset();
-          document.getElementById("regionUserSelectionDiv").classList.remove("hidden");
-          document.getElementById("userForm").classList.add("hidden")
-        }
-
-        console.log(data);
-        fetchStoredUsers();
-      }
-    });
+   
 
 
 
@@ -370,7 +440,7 @@
       users.forEach(user => {
         const option = document.createElement("option");
         option.className = "bg-gray-800 text-white";
-        option.value = `${user.store_email} ${user.store_password} ${user.store_secret_key}`;
+        option.value = `${user.store_email} ${user.store_password} ${user.store_secret_key} ${user.region_number}`;
         option.textContent = `${user.store_email} ${user.store_password}`;
         select.appendChild(option);
       });
@@ -389,6 +459,8 @@
     window.addEventListener("DOMContentLoaded", fetchStoredUsers);
 
     document.getElementById("loginbtn").addEventListener("click", async function () {
+
+      document.getElementById("loader").classList.remove("hidden")
       const selectedValue = document.getElementById("userSelect").value;
 
       if (!selectedValue) {
@@ -401,15 +473,20 @@
       selecteduserEmail = email;
       password = selectedUser[1];
       secretKey = selectedUser[2];
+      selectedRegion = selectedUser[3];
       selectedSecretKey = secretKey;
+      
 
-      selectedRegion = document.getElementById("regionSelect").value
+      console.log("Before Calling get region")
+      console.log("Email",email,"password",password)
+
+      
+        
+
+
 
       console.log("Using email:", email, "password:", password, "secretKey:", secretKey, "region:", selectedRegion);
 
-
-      {% comment %} const [email, password] = selectedValue.split(" ");
-      console.log("selected email:", email, "selected password:", password); {% endcomment %}
       const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
       const response = await fetch("/run", {
@@ -428,25 +505,31 @@
       const text = await response.text();
       const statusDiv = document.getElementById("loginStatus");
       if (text.includes("successful")) {
+        document.getElementById("userForm2").classList.add("hidden")
         document.getElementById("prodlinkheading").classList.remove("hidden");
         document.getElementById("ProductLink").classList.remove("hidden");
         document.getElementById("productFetchbtn").classList.remove("hidden");
         {% comment %} document.getElementById("productQuantity").classList.remove("hidden"); {% endcomment %}
         {% comment %} document.getElementById("buybtn").classList.remove("hidden"); {% endcomment %}
         document.getElementById("userSelectionSection").classList.add("hidden");
-        document.getElementById("userForm").classList.add("hidden");
+       
         document.getElementById("Backbtn").classList.remove("hidden");
 
 
-        document.getElementById("regionSelection").classList.add("hidden");
-
         document.getElementById("selectedLoggedInUser").classList.remove("hidden");
         document.getElementById("selectedLoggedInUser").innerText = `Logged in as: ${email}`;
+        
+
+        document.getElementById("loader").classList.add("hidden") 
+
 
         statusDiv.innerHTML = `<p class="text-green-500 text-base font-medium">${text}</p>`;
       } else {
         statusDiv.innerHTML = `<p class="text-red-500 text-base font-medium" style="color:red">${text}</p>`;
+        document.getElementById("loader").classList.add("hidden")
       }
+      
+
     });
 
 
@@ -480,7 +563,7 @@
             <input type="checkbox" class="product-check w-5 h-5 text-green-500 bg-gray-800 border-2 border-green-500 rounded focus:ring-2 focus:ring-green-400" data-id="${p.productId}" data-vanity="${p.vanityName}">
             <label class="text-white text-lg font-semibold">${p.vanityName}</label>
             <input type="number" min="1" value="1"
-              class="product-qty w-20 p-2 text-white bg-gray-800 border border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+              class="num-input product-qty w-20 p-2 text-white bg-gray-800 border border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
           </div>
         `).join("");
 
@@ -500,9 +583,7 @@
       document.getElementById("")
       if (e.target && e.target.id === "buybtn") {
         const selectedProducts = [];
-        document.getElementById("loader").classList.remove("hidden")
-        document.getElementById("timerDisplay").classList.remove("hidden")
-        startTimer();
+       
         document.querySelectorAll(".product-check:checked").forEach(checkbox => {
           const productId = checkbox.dataset.id;
           const vanityName = checkbox.dataset.vanity;
@@ -516,10 +597,16 @@
           alert("Please select at least one product.");
           return;
         }
+
+        document.getElementById("loader").classList.remove("hidden")
+        document.getElementById("timerDisplay").classList.remove("hidden")
+        startTimer();
+
+        
         console.log("Selected products:", selectedProducts);
         const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
 
-        console.log("Data before form operation:", { products: selectedProducts, productName: productName, userEmail: selecteduserEmail, secretKey: selectedSecretKey });
+        console.log("Data before form operation:", { products: selectedProducts, productName: productName, userEmail: selecteduserEmail, secretKey: selectedSecretKey, regionId: selectedRegion });
 
         const res = await fetch("/form-operation", {
           method: "POST",
@@ -550,6 +637,11 @@
             document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Transaction amount has exceeded the maximum amount allowed</p>`;
             stopTimer();
           }
+          else if(result.error.includes("OTP Verification Failed")){
+            document.getElementById("productInfo").innerHTML = `<p class="text-red-400">OTP verification failed maybe incorrect </p>`;
+            stopTimer();
+          }
+        
           document.getElementById("loader").classList.add("hidden")
           stopTimer();
           {% comment %} document.getElementById("productInfo").innerHTML = `<p class="text-red-400"> ${result.error}</p>`; {% endcomment %}
@@ -573,7 +665,7 @@
 
     document.getElementById("Backbtn").addEventListener("click", function () {
       document.getElementById("userSelectionSection").classList.remove("hidden");
-      document.getElementById("userForm").classList.remove("hidden");
+    
       document.getElementById("Backbtn").classList.add("hidden");
       document.getElementById("prodlinkheading").classList.add("hidden");
       document.getElementById("ProductLink").classList.add("hidden");
@@ -583,12 +675,13 @@
       document.getElementById("loginStatus").innerHTML = "";
       document.getElementById("viewPurchase").classList.add("hidden")
       document.getElementById("ProductLink").value = "";
+      document.getElementById("ProductLink").classList.add("hidden")
 
 
       document.getElementById("selectedLoggedInUser").classList.add("hidden");
       document.getElementById("selectedLoggedInUser").innerText = "";
 
-      document.getElementById("regionSelection").classList.remove("hidden");
+      document.getElementById("userForm2").classList.remove("hidden")
 
 
 

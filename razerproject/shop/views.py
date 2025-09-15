@@ -22,6 +22,9 @@ from rest_framework.authentication import SessionAuthentication
 from asgiref.sync import sync_to_async
 from django.contrib.auth.decorators import login_required
 from . import otpsetup_login
+from . import pyOTPsetup
+from . import checkregion
+
 # Django view for user signup
 def django_user_signup_interface(request):
     return render(request, "django_user_signup.html")
@@ -122,7 +125,7 @@ def form_view_operation(request):
             print("DEBUG SELECTED PRODUCTS:", selected_products)
             print("DEBUG PRODUCT NAME:", productName)
             print("DEBUG Email NAME:", userEmail)
-            # Serialize the product list to pass as a single argument
+           
             serialized = json.dumps(selected_products)
 
             script_path = os.path.join(os.path.dirname(__file__), "main2.py")
@@ -189,6 +192,54 @@ def download_results(request):
         return HttpResponse("File not found.", status=404)
     
 
+#==========================Send secret key get OTP=============================
+@csrf_exempt
+def send_secret_key_get_otp(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body.decode("utf-8"))
+            secret_key = data.get("secret_key")
+        except Exception:
+            return JsonResponse({"error": "Invalid JSON data"}, status=400)
+
+        if not secret_key:
+            return JsonResponse({"error": "Secret key is required"}, status=400)
+
+        try:
+            otp = pyOTPsetup.getKeyReturnOtp(secret_key)
+            return JsonResponse({"otp": otp})
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+
+    # <-- Important: handle non-POST requests
+    return JsonResponse({"error": "Only POST method is allowed"}, status=405)
+
+            
+
+# =========================Checking Region=====================================
+@csrf_exempt
+def check_region(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            email = data.get("email")
+            password = data.get("password")
+
+            if not email or not password:
+                return JsonResponse({"error": "Email and password are required"}, status=400)
+
+            result = checkregion.get_region(email, password)
+
+            if "error" in result:
+                return JsonResponse(result, status=500)
+            else:
+                return JsonResponse(result)
+
+        except Exception as e:
+            return JsonResponse({"error": f"Unexpected error: {str(e)}"}, status=500)
+
+
+    return JsonResponse({"error": "Invalid request method"}, status=405)
 # =========================LOGIN USER FOR MFA SETUP============================
 automation_session = {"logged_in": False}
 
@@ -200,9 +251,14 @@ def start_login(request):
         password = request.POST.get("password")
 
         try:
-            otpsetup_login.login(email, password)
+            status=otpsetup_login.login(email, password)
+            print("[VIEWS] Login function status:", status)
             automation_session["logged_in"] = True
-            return JsonResponse({"status": "waiting_for_otp"})
+
+            if status is False:
+                return JsonResponse({"status": "Secret key is already set up with external Authenticator app. Please remove it to continue"})
+            else:
+                return JsonResponse({"status": "waiting_for_otp"})
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)
 

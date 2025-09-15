@@ -1,0 +1,34 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 11572
+Vanity Name: FreeFire USD 1 (100 Diamonds)
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":400,"message":"Bad Request"}
+
+
+Product ID: 11576
+Vanity Name: FreeFire-USD 20 (2,200 Diamonds)
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":400,"message":"Bad Request"}
+
+

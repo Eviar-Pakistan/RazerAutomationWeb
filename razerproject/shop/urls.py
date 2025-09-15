@@ -19,7 +19,8 @@ urlpatterns = [
     path("submit-otp/", views.submit_otp, name="submit-otp"),
     path("checkUserExist/", views.check_user, name="checkUserExists"),
     path("shutdown_automation/", views.shutdown_automation, name="shutdown_automation"),
-
+    path("send-secretKey-getOtp/", views.send_secret_key_get_otp, name="send-secretKey-getOtp"),
+    path("get-region/",views.check_region,name="getRegion")
 
 ]
 
