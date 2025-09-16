@@ -1,0 +1,20 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22439
+Vanity Name: 60,000 Coins
+Quantity: 1
+
+===================
+OTP Failed
+{"error_code":"cop error","error_message":"\u003c?xml version='1.0' standalone='yes'?\u003e\u003cCOP\u003e\u003cauth-opts\u003e\u003cauthenticator\u003e\u003cauth_id\u003e23270401nFTY2E65FLUREY33WWJ\u003c/auth_id\u003e\u003caccount\u003e*************04@gmail.com\u003c/account\u003e\u003cissuer\u003eRazer\u003c/issuer\u003e\u003c/authenticator\u003e\u003c/auth-opts\u003e\u003cStatus\u003e\u003cErrno\u003e-1\u003c/Errno\u003e\u003cMessage\u003eInvalid token.\u003c/Message\u003e\u003c/Status\u003e\u003cRequestStatus\u003e\u003cErrno\u003e-1\u003c/Errno\u003e\u003cMessage\u003eInvalid token.\u003c/Message\u003e\u003cErrorList\u003e\u003cError\u003e\u003cErrorCode\u003e4512\u003c/ErrorCode\u003e\u003c/Error\u003e\u003c/ErrorList\u003e\u003cTimestamp\u003e1758021818\u003c/Timestamp\u003e\u003cServer\u003eNDIwNCRYJDE2JFgkw4PnbUH6wt2PlRgtaQFZGE49AAzcKcNIHYsTNh1+I6Q=\u003c/Server\u003e\u003c/RequestStatus\u003e\u003c/COP\u003e"}
+
+
+

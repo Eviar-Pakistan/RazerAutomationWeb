@@ -124,35 +124,22 @@ def form_view_operation(request):
             secretKey = data.get("secretKey")
             regionId = data.get("regionId")
 
-            print("DEBUG SELECTED PRODUCTS:", selected_products)
-            print("DEBUG PRODUCT NAME:", productName)
-            print("DEBUG Email NAME:", userEmail)
-           
             serialized = json.dumps(selected_products)
-
             script_path = os.path.join(os.path.dirname(__file__), "main2.py")
-            print("DEBUG SCRIPT PATH:", script_path)
-            print("FILE EXISTS:", os.path.exists(script_path))
-            
             output_file = f"results_{uuid.uuid4().hex}.txt"
 
             result = subprocess.run(
-                [sys.executable, script_path, serialized,productName,userEmail,secretKey,regionId,output_file],
+                [sys.executable, script_path, serialized, productName, userEmail, secretKey, regionId, output_file],
                 capture_output=True,
                 text=True
             )
 
-            download_url = None
-            stdout_text = result.stdout
-            print("Main2 Output:", stdout_text)
-            for line in stdout_text.splitlines():
-                if "Download URL:" in line:
-                 download_url = line.split("Download URL:")[1].strip()
-            
-            if download_url:
-             return JsonResponse({"message": "Purchase Completed", "download_url": download_url,"error":stdout_text})
-            else:
-                return JsonResponse({"error":f"No download URL found. Check logs.{stdout_text}"}, status=500)
+            try:
+                main2_result = json.loads(result.stdout)
+            except Exception as e:
+                return JsonResponse({"error": f"main2.py did not return valid JSON. Output was: {result.stdout}"}, status=500)
+
+            return JsonResponse(main2_result)
         except Exception as e:
             return HttpResponse(f"Error: {str(e)}", status=500)
 

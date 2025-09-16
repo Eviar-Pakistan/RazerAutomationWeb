@@ -256,7 +256,7 @@
 
     <form id="productForm" class="space-y-5 mt-6">{% csrf_token %}</form>
     <div id="productDetails"></div>
-    <div id="productInfo" class="mt-4"></div>
+    <div id="productInfo" class="mt-4 max-w-xl"></div>
     <a id="viewPurchase"
       class="block w-full py-3 bg-white hidden hover:bg-green-800 text-green-400 text-center mt-4 mb-2 font-bold rounded-lg shadow-lg transition"
       href="" download="purchase.txt">View Purchasing</a>
@@ -580,89 +580,85 @@
     });
 
     document.addEventListener("click", async function (e) {
-
-      document.getElementById("")
       if (e.target && e.target.id === "buybtn") {
         const selectedProducts = [];
-       
+    
         document.querySelectorAll(".product-check:checked").forEach(checkbox => {
           const productId = checkbox.dataset.id;
           const vanityName = checkbox.dataset.vanity;
           const quantityInput = checkbox.parentElement.querySelector(".product-qty");
           const quantity = quantityInput.value;
-
           selectedProducts.push({ productId, vanityName, quantity });
         });
-
+    
         if (selectedProducts.length === 0) {
           alert("Please select at least one product.");
           return;
         }
-
-        document.getElementById("loader").classList.remove("hidden")
-        document.getElementById("timerDisplay").classList.remove("hidden")
+    
+        document.getElementById("loader").classList.remove("hidden");
+        document.getElementById("timerDisplay").classList.remove("hidden");
         startTimer();
-
-        
-        console.log("Selected products:", selectedProducts);
+    
         const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
-
-        console.log("Data before form operation:", { products: selectedProducts, productName: productName, userEmail: selecteduserEmail, secretKey: selectedSecretKey, regionId: selectedRegion });
-
-        const res = await fetch("/form-operation", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-CSRFToken": csrftoken
-          },
-          body: JSON.stringify({ products: selectedProducts, productName: productName, userEmail: selecteduserEmail, secretKey: selectedSecretKey, regionId: selectedRegion })
-        });
-
-        const result = await res.json();
-        console.log("Result from /form-operation:", result);
-        if (result.error) {
-          if (result.error.includes("70600")) {
-
-            document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Not Enough Coins</p>`;
-            stopTimer();
-          }
-          else if (result.error.includes("70607")) {
-            document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Region Id mismatched</p>`;
-            stopTimer();
-          }
-          else if (result.error.includes("70628")) {
-            document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Product out of stock</p>`;
-            stopTimer();
-          }
-          else if (result.error.includes("70613")) {
-            document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Transaction amount has exceeded the maximum amount allowed</p>`;
-            stopTimer();
-          }
-          else if(result.error.includes("OTP Verification Failed")){
-            document.getElementById("productInfo").innerHTML = `<p class="text-red-400">OTP verification failed maybe incorrect </p>`;
-            stopTimer();
-          }
-        
-          document.getElementById("loader").classList.add("hidden")
+    
+        // These variables must be defined in your scope/context:
+        // productName, selecteduserEmail, selectedSecretKey, selectedRegion
+        // For url, you can use window.location.host or hardcode if needed
+        const url = window.location.host;
+    
+        let response, result;
+        try {
+          response = await fetch("/form-operation", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": csrftoken
+            },
+            body: JSON.stringify({
+              products: selectedProducts,
+              productName: productName,
+              userEmail: selecteduserEmail,
+              secretKey: selectedSecretKey,
+              regionId: selectedRegion
+            })
+          });
+          result = await response.json();
+          console.log("Purchase response:", result);
+        } catch (err) {
+          document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Network or server error. Please try again.${err}</p>`;
+          document.getElementById("loader").classList.add("hidden");
           stopTimer();
-          {% comment %} document.getElementById("productInfo").innerHTML = `<p class="text-red-400"> ${result.error}</p>`; {% endcomment %}
-          const currentPurchase = document.getElementById("viewPurchase")
-          currentPurchase.classList.remove("hidden")
-          currentPurchase.href = `http://${url}${result.download_url}`
-          currentPurchase.setAttribute("download", `purchase${result.download_url.split("/")[2]}.txt`);
-          console.log("Error in result:", result.error)
           return;
         }
-        document.getElementById("loader").classList.add("hidden")
-        const currentPurchase = document.getElementById("viewPurchase")
-        currentPurchase.classList.remove("hidden")
-        currentPurchase.href = `http://${url}${result.download_url}`
-        currentPurchase.setAttribute("download", `purchase${result.download_url.split("/")[2]}.txt`);
-        document.getElementById("productInfo").innerHTML = `<p class="text-red-400">Purchase Successful</p>`;
-        stopTimer();
+    
+        document.getElementById("loader").classList.add("hidden");
+ 
+        if (!result.success) {
+          console.log("Purchase error:", result.error);
+          document.getElementById("productInfo").innerHTML = `<p class="text-red-400 max-w-xl">${result.error}</p>`;
+          stopTimer();
+        } else {
+          // Success
+          document.getElementById("productInfo").innerHTML = `<p class="text-green-500 max-w-xl">Purchase Successful</p>`;
+          stopTimer();
+        }
+
+        if(!result.download_url_success){
+          document.getElementById("productInfo").innerHTML += `<p class="text-red-400 max-w-xl">However, there was an issue generating the download link</p>`;
+          stopTimer();
+        }
+    
+        // Show download link if available
+        if (result.download_url) {
+          const currentPurchase = document.getElementById("viewPurchase");
+          currentPurchase.classList.remove("hidden");
+          currentPurchase.href = `http://${url}${result.download_url}`;
+          const fileName = result.download_url.split("/").pop();
+          currentPurchase.setAttribute("download", `purchase_${fileName}`);
+        }
       }
     });
-
 
     document.getElementById("Backbtn").addEventListener("click", function () {
       document.getElementById("userSelectionSection").classList.remove("hidden");
@@ -721,7 +717,7 @@
           body: JSON.stringify({ email: selecteduserEmail })
         });
         const data = await response.json();
-
+        
         filesHolder.innerHTML = ""; // clear loader
 
         if (data.files && data.files.length > 0) {

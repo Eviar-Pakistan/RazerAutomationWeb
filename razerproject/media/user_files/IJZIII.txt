@@ -1,0 +1,130 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70628,"message":"Out of Stock"}
+
+
+Product ID: 22431
+Vanity Name: 100 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Product ID: 22433
+Vanity Name: 500 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Product ID: 22432
+Vanity Name: 1000 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Product ID: 22434
+Vanity Name: 2500 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Product ID: 22435
+Vanity Name: 5000 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Product ID: 22436
+Vanity Name: 10,000 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Product ID: 22437
+Vanity Name: 20,000 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70600,"message":"Invalid Request"}
+
+
+Product ID: 22438
+Vanity Name: 50,000 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70613,"message":"Transaction amount has exceeded the maximum amount allowed"}
+
+
+Product ID: 22439
+Vanity Name: 60,000 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+{"code":70613,"message":"Transaction amount has exceeded the maximum amount allowed"}
+
+
