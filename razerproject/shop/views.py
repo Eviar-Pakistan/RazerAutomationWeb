@@ -25,6 +25,8 @@ from . import otpsetup_login
 from . import pyOTPsetup
 from . import checkregion
 
+import uuid
+
 # Django view for user signup
 def django_user_signup_interface(request):
     return render(request, "django_user_signup.html")
@@ -131,9 +133,11 @@ def form_view_operation(request):
             script_path = os.path.join(os.path.dirname(__file__), "main2.py")
             print("DEBUG SCRIPT PATH:", script_path)
             print("FILE EXISTS:", os.path.exists(script_path))
+            
+            output_file = f"results_{uuid.uuid4().hex}.txt"
 
             result = subprocess.run(
-                [sys.executable, script_path, serialized,productName,userEmail,secretKey,regionId],
+                [sys.executable, script_path, serialized,productName,userEmail,secretKey,regionId,output_file],
                 capture_output=True,
                 text=True
             )
@@ -163,13 +167,23 @@ def get_product_info(request):
     if request.method == "POST":
         body = json.loads(request.body)
         product = body.get("product")
+        email=body.get("email")
+
+        print("[Product Info View] Product:",product," Email",email)
 
         script_path = os.path.join(os.path.dirname(__file__), "products.py")
-        result = subprocess.run(
-            [sys.executable, script_path, product],
+
+        try:
+          result = subprocess.run(
+            [sys.executable, script_path, product,email],
             capture_output=True,
             text=True
-        )
+          )
+        except Exception as e:
+            print("Error while opening product subprocees",e)
+            return JsonResponse({
+                "error": "Failed to run product subprocess",
+            }, status=500)
 
         try:
             output = json.loads(result.stdout)

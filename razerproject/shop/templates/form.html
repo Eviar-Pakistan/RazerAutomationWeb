@@ -540,14 +540,15 @@
       const value = productLink.split("/catalog/")[1];
       productName = value;
       const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
-
+      
+      console.log("Fetching Product Info For user",value,selecteduserEmail)
       const res = await fetch("/get-product-info", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "X-CSRFToken": csrftoken
         },
-        body: JSON.stringify({ product: value })
+        body: JSON.stringify({ product: value,email:selecteduserEmail })
       });
 
       const data = await res.json();

@@ -1,19 +1,32 @@
 import pickle
 import sys
 import json
+import re
+
 if __name__ == "__main__":
     product = sys.argv[1]
+    email = sys.argv[2]
+
+# print("[Product.py] Email:",email," Product:",product)    
    
+def safe_email(email):
+    return re.sub('[^a-zA-Z0-9]', '_', email)
+
+safe = safe_email(email)
 
 # Step 1: Load session and data
-with open("session.pkl", "rb") as f:
+with open(f"session_{safe}.pkl", "rb") as f:
     session = pickle.load(f)
 
-with open("session_data.pkl", "rb") as f:
+with open(f"session_data_{safe}.pkl", "rb") as f:
     session_data = pickle.load(f)
 
 access_token = session_data.get("access_token")
 uuid = session_data.get("uuid")
+
+
+# print("[Product.py] Access Token:",access_token)
+# print("[Product.py] UUID:",uuid)
 
 # print("Session Loaded:", session.cookies.get_dict())
 # print("Access Token:", access_token)

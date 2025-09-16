@@ -4,6 +4,10 @@ import sys
 from session_manager import RazerSessionManager
 import pickle
 
+import re
+
+
+
 if __name__ == "__main__":
     email = sys.argv[1]
     password = sys.argv[2]
@@ -70,13 +74,18 @@ if sso_response.status_code == 200:
     RazerSessionManager.set("uuid", token_data.get("uuid"))
     print("Current Session=>",RazerSessionManager.all())
 
-    with open("session.pkl", "wb") as f:
+    def safe_email(email):
+    # Make filename safe
+     return re.sub('[^a-zA-Z0-9]', '_', email)
+    safe = safe_email(email)
+
+    with open(f"session_{safe}.pkl", "wb") as f:
      pickle.dump(session, f)
 
-    with open("session_data.pkl", "wb") as f:
+    with open(f"session_data_{safe}.pkl", "wb") as f:
      pickle.dump(RazerSessionManager.all(), f)
 
-    with open("user_data.pkl", "wb") as f:
+    with open(f"user_data_{safe}.pkl", "wb") as f:
      pickle.dump({"Account":token_data.get("account"),"RazerID":token_data.get("razerid")}, f)
   
 else:

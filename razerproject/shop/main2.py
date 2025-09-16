@@ -6,6 +6,7 @@ import os
 import json
 import random
 import string
+import re
 
 
 # region = {
@@ -47,41 +48,56 @@ IP="127.0.0.1:8000"
 errorString=""
 # Getting data from frontend-->views.py-->main2.py
 if __name__ == "__main__":
+    
     raw_data = sys.argv[1]
     selected_products = json.loads(raw_data)
     productName = sys.argv[2] 
     userEmail=sys.argv[3]
     secretKey=sys.argv[4]
     regionId=sys.argv[5]
+    output_file = sys.argv[6]
+    
     print("[Main2] Selected Products:", selected_products)
     print("[Main2] Product Name:", productName)
     print("[Main2] Email Name:", userEmail)
     print("[Main2] Secret Key:", secretKey)
     print("[Main2] region:",regionId)
   
+
+    def safe_email(email):
+     return re.sub('[^a-zA-Z0-9]', '_', email)
+    
+    safe = safe_email(userEmail)
+
     # Loading session to get cookies etc
-    with open("session.pkl", "rb") as f:
-      session = pickle.load(f)
+    # with open("session.pkl", "rb") as f:
+    #   session = pickle.load(f)
+
+    with open(f"session_{safe}.pkl", "rb") as f:
+     session = pickle.load(f)
 
 
 
     # Loading accessToken and uuid
-    with open("session_data.pkl", "rb") as f:
+    # with open("session_data.pkl", "rb") as f:
+    #   session_data = pickle.load(f)
+    with open(f"session_data_{safe}.pkl", "rb") as f:
       session_data = pickle.load(f)
       access_token = session_data.get("access_token")
       uuid = session_data.get("uuid")
 
-    print("Session Loaded From main2.py:", session.cookies.get_dict())
-    print("Access Token  From main2.py:", access_token)
-    print("UUID  From main2.py:", uuid)
+    print("[main2.py] Session Loaded :", session.cookies.get_dict())
+    print("[main2.py] Access Token:", access_token)
+    print("[main2.py] UUID:", uuid)
 
 
     # Loading user info
-    with open("user_data.pkl", "rb") as f:
-      user_data=pickle.load(f)
+    with open(f"user_data_{safe}.pkl", "rb") as f:
+     user_data = pickle.load(f)
     print("User Data",user_data)
     # Opening a file
-    output_file = "results.txt"
+    # output_file = "results.txt"
+
     with open(output_file, "w") as f:
       f.write("User Details\n")
       f.write("===================\n\n")
@@ -254,6 +270,8 @@ try:
         print(" Download URL:", upload_response.json().get("download_url"))
         if errorString:
             print("eerrorString",errorString)
+        os.remove(output_file)
+        print(f"Deleted local file a temp storage provider: {output_file}")
     else:
         print("[Main2] Failed to upload file")
         print(upload_response.text)
