@@ -1,0 +1,210 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 20
+
+===================
+Transaction Results
+===================
+
+Purchase 3 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 2 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 1 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 4 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d268c117&#46;1758190958&#46;11b263f3
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d268c117&#46;1758190958&#46;11b263f3</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 6 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d268c117&#46;1758190958&#46;11b26706
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d268c117&#46;1758190958&#46;11b26706</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 5 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d268c117&#46;1758190958&#46;11b26739
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d268c117&#46;1758190958&#46;11b26739</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 7 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 8 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 9 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 10 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;4f861402&#46;1758190968&#46;40c60df7
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4f861402&#46;1758190968&#46;40c60df7</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 12 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;4f861402&#46;1758190968&#46;40c6117e
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4f861402&#46;1758190968&#46;40c6117e</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 11 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 14 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;4f861402&#46;1758190973&#46;40c67cc2
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4f861402&#46;1758190973&#46;40c67cc2</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 15 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;4f861402&#46;1758190973&#46;40c68cd8
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4f861402&#46;1758190973&#46;40c68cd8</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 13 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 17 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;4f861402&#46;1758190979&#46;40c72c4f
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4f861402&#46;1758190979&#46;40c72c4f</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 18 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;4f861402&#46;1758190979&#46;40c72d05
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4f861402&#46;1758190979&#46;40c72d05</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 16 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;4f861402&#46;1758190979&#46;40c73680
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4f861402&#46;1758190979&#46;40c73680</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 19 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;4f861402&#46;1758190984&#46;40c7b1c2
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4f861402&#46;1758190984&#46;40c7b1c2</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 20 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Completed 20 purchases in 36.60s
+===================

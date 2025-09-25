@@ -20,7 +20,9 @@ urlpatterns = [
     path("checkUserExist/", views.check_user, name="checkUserExists"),
     path("shutdown_automation/", views.shutdown_automation, name="shutdown_automation"),
     path("send-secretKey-getOtp/", views.send_secret_key_get_otp, name="send-secretKey-getOtp"),
-    path("get-region/",views.check_region,name="getRegion")
+    path("get-region/",views.check_region,name="getRegion"),
+    path("get-balance",views.get_balance,name="getBalance"),
+    path("deactivate-user",views.deactivate_user,name="deactivate_user"),
 
 ]
 

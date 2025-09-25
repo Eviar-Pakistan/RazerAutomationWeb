@@ -1,0 +1,360 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 50
+
+===================
+Transaction Results
+===================
+
+Purchase 2 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 1 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 4 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 3 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 5 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 6 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 8 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 7 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 9 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 10 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 11 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 12 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 14 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 13 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 16 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 15 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 18 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 17 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 19 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 20 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 22 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 21 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 24 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193019&#46;e5ee62b
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193019&#46;e5ee62b</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 23 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 25 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193024&#46;e5f340f
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193024&#46;e5f340f</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 26 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 28 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193029&#46;e5f7890
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193029&#46;e5f7890</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 27 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 30 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193034&#46;e5fcc68
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193034&#46;e5fcc68</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 29 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 31 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193040&#46;e601a14
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193040&#46;e601a14</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 32 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 33 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193045&#46;e606c7b
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193045&#46;e606c7b</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 34 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 36 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193051&#46;e60bb2e
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193051&#46;e60bb2e</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 35 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 38 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193057&#46;e6124b7
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193057&#46;e6124b7</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 37 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 39 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193063&#46;e616211
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193063&#46;e616211</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 40 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 42 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193068&#46;e61abc4
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193068&#46;e61abc4</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 41 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 44 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193073&#46;e61f0da
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193073&#46;e61f0da</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 43 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 45 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193080&#46;e6248c2
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193080&#46;e6248c2</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 46 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 47 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193086&#46;e62a386
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193086&#46;e62a386</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 48 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 50 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758193092&#46;e62e5f3
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758193092&#46;e62e5f3</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 49 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Completed 50 purchases in 149.72s
+===================

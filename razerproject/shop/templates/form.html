@@ -107,8 +107,10 @@
     <h2 class="text-3xl font-bold text-green-400 text-center mb-6">
       Razer Gold Automation
     </h2>
-    <p id="selectedLoggedInUser"
-      class="text-white text-md font-medium text-center hidden p-2 border border-green-500 rounded-full"></p>
+    <div id="selectedLoggedInUser"
+      class=" text-xl font-medium p-3 hidden border border-green-500 rounded-full flex flex-row justify-between items-center"></div>
+     
+ 
 
     <div id="Backbtn"
       class="p-3 rounded-md bg-red-500 absolute font-bold absolute top-1 left-1 hidden text-white text-base">
@@ -205,6 +207,7 @@
           <option value="29">PK:29</option>
         </select>
       </div> {% endcomment %}
+      
 
       <div class="mt-4" id="userSelectionSection" class="">
         <h1 class="text-2xl font-bold text-white text-left mb-6">
@@ -216,8 +219,13 @@
           <option value="">Select stored user</option>
         </select>
 
+        <button id="Deletebtn"
+        class="w-full py-3 bg-red-500 hover:bg-red-500-600 text-white mt-4 mb-2 font-bold rounded-lg shadow-lg transition">
+        Delete User
+      </button>
+
         <button id="loginbtn"
-          class="w-full py-3 bg-green-500 hover:bg-green-600 text-white mt-4 mb-2 font-bold rounded-lg shadow-lg transition">
+          class="w-full py-3 bg-green-500 hover:bg-green-600 text-white mt-8 mb-2 font-bold rounded-lg shadow-lg transition">
           Login User
         </button>
         <div id="loginStatus" class="text-green-400 text-sm mt-4"></div>
@@ -458,6 +466,9 @@
     // Call the function on page load
     window.addEventListener("DOMContentLoaded", fetchStoredUsers);
 
+
+
+    {% comment %} ====================LOGIN========================== {% endcomment %}
     document.getElementById("loginbtn").addEventListener("click", async function () {
 
       document.getElementById("loader").classList.remove("hidden")
@@ -479,12 +490,6 @@
 
       console.log("Before Calling get region")
       console.log("Email",email,"password",password)
-
-      
-        
-
-
-
       console.log("Using email:", email, "password:", password, "secretKey:", secretKey, "region:", selectedRegion);
 
       const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
@@ -504,35 +509,62 @@
 
       const text = await response.text();
       const statusDiv = document.getElementById("loginStatus");
+
+
       if (text.includes("successful")) {
+
+        document.getElementById("selectedLoggedInUser").innerHTML = `<p class="text-white"> ${email}</p>`;
+
+        try{
+          const res = await fetch("/get-balance", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": csrftoken
+            },
+            body: JSON.stringify({ email:selecteduserEmail })
+          });
+    
+          const data = await res.json();
+          console.log("Balance response:", data);
+  
+          document.getElementById("selectedLoggedInUser").innerHTML += `<div class="text-white flex flex-row"><p id="goldID" class="text-[#FFB400]">${data.balance_result.gold_balance}</p>/<p id="silverID" class="text-[#30d5da]">${data.balance_result.silver_balance}</p></div>`;
+        }catch(e){
+          console.log("Error fetching balance:", e)
+          statusDiv.innerHTML = `<p class="text-red-500 text-base font-medium" style="color:red">${e}</p>`;
+        }
+
+
         document.getElementById("userForm2").classList.add("hidden")
         document.getElementById("prodlinkheading").classList.remove("hidden");
         document.getElementById("ProductLink").classList.remove("hidden");
         document.getElementById("productFetchbtn").classList.remove("hidden");
-        {% comment %} document.getElementById("productQuantity").classList.remove("hidden"); {% endcomment %}
-        {% comment %} document.getElementById("buybtn").classList.remove("hidden"); {% endcomment %}
         document.getElementById("userSelectionSection").classList.add("hidden");
-       
+
         document.getElementById("Backbtn").classList.remove("hidden");
 
 
         document.getElementById("selectedLoggedInUser").classList.remove("hidden");
-        document.getElementById("selectedLoggedInUser").innerText = `Logged in as: ${email}`;
+       
         
 
         document.getElementById("loader").classList.add("hidden") 
 
 
         statusDiv.innerHTML = `<p class="text-green-500 text-base font-medium">${text}</p>`;
+        
+
       } else {
+
         statusDiv.innerHTML = `<p class="text-red-500 text-base font-medium" style="color:red">${text}</p>`;
         document.getElementById("loader").classList.add("hidden")
+
       }
       
 
     });
 
-
+   {% comment %} ===================Product Info==================== {% endcomment %}
 
     let ProductName;
     document.getElementById("productFetchbtn").addEventListener("click", async function () {
@@ -541,25 +573,28 @@
       productName = value;
       const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
       
-      console.log("Fetching Product Info For user",value,selecteduserEmail)
+      console.log("Fetching Product Info For user",value,selecteduserEmail,selectedRegion)
       const res = await fetch("/get-product-info", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "X-CSRFToken": csrftoken
         },
-        body: JSON.stringify({ product: value,email:selecteduserEmail })
+        body: JSON.stringify({ product: value,email:selecteduserEmail,regionId:selectedRegion })
       });
 
       const data = await res.json();
+      console.log("Product info response:", data);
+      document.getElementById("loader").classList.add("hidden");
       const infoDiv = document.getElementById("productDetails");
 
-      if (data.error) {
-        infoDiv.innerHTML = `<p class="text-red-400">⚠️ ${data.error}</p>`;
+      if (data.catalog_result.error) {
+        infoDiv.innerHTML = `<p class="text-red-400">⚠️ ${data.catalog_result.error}</p>`;
         return;
       }
 
-      const productCheckboxes = data.products.map(p => `
+      const productCheckboxes = data.catalog_result
+      .products.map(p => `
           <div class="flex items-center gap-4 mb-4">
             <input type="checkbox" class="product-check w-5 h-5 text-green-500 bg-gray-800 border-2 border-green-500 rounded focus:ring-2 focus:ring-green-400" data-id="${p.productId}" data-vanity="${p.vanityName}">
             <label class="text-white text-lg font-semibold">${p.vanityName}</label>
@@ -635,13 +670,37 @@
         document.getElementById("loader").classList.add("hidden");
  
         if (!result.success) {
-          console.log("Purchase error:", result.error);
-          document.getElementById("productInfo").innerHTML = `<p class="text-red-400 max-w-xl">${result.error}</p>`;
+          console.log("Purchase error:", result.details[0].error);
+          document.getElementById("productInfo").innerHTML = `<p class="text-red-400 max-w-xl">${result.details[0].error}</p>`;
           stopTimer();
         } else {
-          // Success
+          
           document.getElementById("productInfo").innerHTML = `<p class="text-green-500 max-w-xl">Purchase Successful</p>`;
           stopTimer();
+
+
+          try{
+            const res = await fetch("/get-balance", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": csrftoken
+              },
+              body: JSON.stringify({ email:selecteduserEmail })
+            });
+      
+            const data = await res.json();
+            console.log("Balance response:", data);
+    
+            document.getElementById("goldID").innerText = `${data.balance_result.gold_balance}`;
+            document.getElementById("silverID").innerText = `${data.balance_result.silver_balance}`;
+          }catch(e){
+            console.log("Error fetching balance:", e)
+            statusDiv.innerHTML = `<p class="text-red-500 text-base font-medium" style="color:red">${e}</p>`;
+          }
+
+
+          
         }
 
         if(!result.download_url_success){
@@ -744,6 +803,84 @@
         filesHolder.innerHTML = "<p class='text-red-500'>Error fetching files.</p>";
       }
     });
+
+
+    {% comment %} ==========Delete User========= {% endcomment %}
+
+    document.getElementById("Deletebtn").addEventListener("click", async function () {
+      const selectedValue = document.getElementById("userSelect").value;
+    
+      if (!selectedValue) {
+        alert("Please select a user.");
+        return;
+      }
+    
+      const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+      email=selectedValue.split(" ")[0]
+    
+      // Step 1: Ask for confirmation
+      const confirmResult = await Swal.fire({
+        title: 'Are you sure?',
+        text: `Do you really want to delete ${email}? This action cannot be undone.`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete',
+        cancelButtonText: 'Cancel',
+        customClass: {
+          popup: 'custom-swal-popup',
+          title: 'custom-swal-title',
+          htmlContainer: 'custom-swal-html-container',
+          confirmButton: 'custom-swal-confirm',
+          cancelButton: 'custom-swal-cancel'
+        }
+      });
+    
+      if (!confirmResult.isConfirmed) {
+        return; // User cancelled
+      }
+    
+      // Step 2: Proceed with deletion
+      const response = await fetch("/deactivate-user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": csrftoken
+        },
+        body: JSON.stringify({ email: email })
+      });
+    
+      const data = await response.json();
+    
+      if (response.status === 200) {
+        Swal.fire({
+          title: 'Success',
+          text: data.message,
+          confirmButtonText: 'OK',
+          customClass: {
+            popup: 'custom-swal-popup',
+            title: 'custom-swal-title',
+            htmlContainer: 'custom-swal-html-container',
+            confirmButton: 'custom-swal-confirm'
+          }
+        });
+        fetchStoredUsers();
+      } else {
+        Swal.fire({
+          title: 'Error',
+          text: data.error || 'An error occurred while deleting the user.',
+          icon: 'error',
+          confirmButtonText: 'OK',
+          customClass: {
+            popup: 'custom-swal-popup',
+            title: 'custom-swal-title',
+            htmlContainer: 'custom-swal-html-container',
+            confirmButton: 'custom-swal-confirm'
+          }
+        });
+      }
+    });
+    
 
 
     {% comment %} ==========Timer ========== {% endcomment %}

@@ -1,0 +1,350 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 50
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 2 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 3 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 4 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 6 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 5 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}
+
+
+Purchase 8 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192842&#46;e55bdc6
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192842&#46;e55bdc6</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 7 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192842&#46;e55be0b
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192842&#46;e55be0b</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 10 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192846&#46;e55f581
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192846&#46;e55f581</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 9 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192846&#46;e55f654
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192846&#46;e55f654</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 11 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192850&#46;e562fbf
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192850&#46;e562fbf</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 12 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192851&#46;e563900
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192851&#46;e563900</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 13 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192855&#46;e56726e
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192855&#46;e56726e</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 14 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192855&#46;e5672f8
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192855&#46;e5672f8</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 15 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192859&#46;e56abdf
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192859&#46;e56abdf</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 16 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192859&#46;e56acc8
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192859&#46;e56acc8</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 18 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192863&#46;e56e7c7
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192863&#46;e56e7c7</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 17 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192863&#46;e56e8ab
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192863&#46;e56e8ab</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 19 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192867&#46;e572902
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192867&#46;e572902</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 20 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192867&#46;e5728e7
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192867&#46;e5728e7</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 22 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192872&#46;e57650b
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192872&#46;e57650b</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 21 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192872&#46;e576590
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192872&#46;e576590</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 23 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192876&#46;e57a16a
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192876&#46;e57a16a</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 24 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192876&#46;e57a3d5
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192876&#46;e57a3d5</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 26 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192881&#46;e57e1fc
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192881&#46;e57e1fc</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 25 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192881&#46;e57eb7d
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192881&#46;e57eb7d</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 28 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192886&#46;e5822fe
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192886&#46;e5822fe</P>
+</BODY>
+</HTML>
+
+
+
+Purchase 27 Failed
+Checkout Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;razer&#46;com&#47;api&#47;webshop&#47;checkout&#47;gold" on this server.<P>
+Reference&#32;&#35;18&#46;d668c117&#46;1758192886&#46;e582392
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d668c117&#46;1758192886&#46;e582392</P>
+</BODY>
+</HTML>
+
+
+

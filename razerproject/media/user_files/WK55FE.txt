@@ -1,0 +1,27 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1: SUCCESS (via DIRECT...)
+Transaction Number: 122GY0HV1MLA9B2012E13
+Pin Code: ZowwpzWu9IJiB5g
+
+Completed 1 purchases in 8.20s
+Success: 1/1 (100.0%)
+Access Denied errors: 0
+Total retries: 0
+===================

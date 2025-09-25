@@ -1,0 +1,24 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000021740CBA490>, 'Connection to 185.123.143.247 timed out. (connect timeout=30)')))
+
+
+Completed 1 purchases in 21.04s
+===================

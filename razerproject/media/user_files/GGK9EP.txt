@@ -1,0 +1,71 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 9
+
+===================
+Transaction Results
+===================
+
+Purchase 8 Failed
+Voucher Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;raze...
+
+Purchase 4: SUCCESS (via DIRECT...)
+Transaction Number: 122GY0HV4UG4DCB966829
+Pin Code: jPsZVZGL2Wi4jNA
+
+Purchase 7: SUCCESS (via DIRECT...)
+Transaction Number: 122GY0HV4UG3B282F6B19
+Pin Code: Mzu7EK9ag9Vl8Fq
+
+Purchase 1 Failed
+Voucher Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;raze...
+
+Purchase 2 Failed
+Voucher Failed: <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;gold&#46;raze...
+
+Purchase 6: SUCCESS (via DIRECT...)
+Transaction Number: 122GY0HV4URKC00D136BD
+Pin Code: 37UkzxcoNVh07ET
+
+Purchase 3: SUCCESS (via DIRECT...)
+Transaction Number: 122GY0HV4UT8830DBE931
+Pin Code: 6fpvWigFUwRs3kp
+
+Purchase 5: SUCCESS (via DIRECT...)
+Transaction Number: 122GY0HV4UN7400D2BE0F
+Pin Code: jZXn2SyGXKPq9Z6
+
+Purchase 9: SUCCESS (after 1 retries) (via DIRECT...)
+Transaction Number: 122GY0HV4YHA18549805A
+Pin Code: 2wTsdSixc4PVKkM
+
+Completed 9 purchases in 12.41s
+Success: 6/9 (66.7%)
+Access Denied errors: 3
+Total retries: 1
+===================

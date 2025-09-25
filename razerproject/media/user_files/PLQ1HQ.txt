@@ -1,0 +1,36 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 4
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 400 Bad Request')))
+
+
+Purchase 3 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 400 Bad Request')))
+
+
+Purchase 4 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 400 Bad Request')))
+
+
+Purchase 2 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 400 Bad Request')))
+
+
+Completed 4 purchases in 0.75s
+===================

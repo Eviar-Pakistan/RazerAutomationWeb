@@ -1,0 +1,48 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 7
+
+===================
+Transaction Results
+===================
+
+Purchase 6 Failed
+SOCKSHTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x000002A650F6B110>: Failed to establish a new connection: SOCKS4 proxy server sent invalid data'))
+
+
+Purchase 1 Failed
+SOCKSHTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x000002A650F5DD30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+
+Purchase 2 Failed
+SOCKSHTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ConnectTimeoutError(<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x000002A650F6AFD0>, 'Connection to gold.razer.com timed out. (connect timeout=30)'))
+
+
+Purchase 5 Failed
+SOCKSHTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ConnectTimeoutError(<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x000002A650F6B250>, 'Connection to gold.razer.com timed out. (connect timeout=30)'))
+
+
+Purchase 4 Failed
+SOCKSHTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ConnectTimeoutError(<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x000002A650F6B4D0>, 'Connection to gold.razer.com timed out. (connect timeout=30)'))
+
+
+Purchase 3 Failed
+SOCKSHTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ConnectTimeoutError(<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x000002A650F6B390>, 'Connection to gold.razer.com timed out. (connect timeout=30)'))
+
+
+Purchase 7 Failed
+SOCKSHTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ConnectTimeoutError(<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x000002A650F6B610>, 'Connection to gold.razer.com timed out. (connect timeout=30)'))
+
+
+Completed 7 purchases in 21.12s
+===================

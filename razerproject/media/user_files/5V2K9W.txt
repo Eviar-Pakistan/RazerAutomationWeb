@@ -1,0 +1,470 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 150
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 4 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 2 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 3 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 5 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 6 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 7 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 8 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 10 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 11 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 12 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 9 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Read timed out. (read timeout=30)
+
+Purchase 13 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 14 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 15 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 16 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 17 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 18 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 19 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 20 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 21 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 22 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 23 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 24 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 25 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 27 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 26 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 28 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 29 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 30 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 31 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 33 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 32 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 34 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 35 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 38 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 39 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 36 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 40 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 41 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 37 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 42 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 43 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 44 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 45 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 46 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 47 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 48 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 49 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 50 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 51 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 53 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 52 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 54 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 55 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 56 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 57 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 58 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 60 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 59 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 62 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 61 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 63 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 64 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 65 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 66 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 67 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 68 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Read timed out. (read timeout=30)
+
+Purchase 69 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 70 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 71 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 72 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 73 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 74 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 75 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 76 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 77 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 78 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 79 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 80 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 82 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 83 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 84 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 81 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 85 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 86 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 87 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 88 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 89 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 91 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 92 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 90 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Read timed out. (read timeout=30)
+
+Purchase 93 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 94 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 95 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 97 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 99 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 96 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 98 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 100 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 101 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 103 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 102 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 104 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 106 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 107 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 105 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 108 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 109 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 110 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 111 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 114 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 112 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 115 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 113 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Read timed out. (read timeout=30)
+
+Purchase 116 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 117 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 118 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 119 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 121 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 122 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 123 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 120 Failed
+('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Purchase 124 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 125 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 126 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 127 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 128 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 129 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 130 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 131 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 132 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 133 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 134 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 135 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 136 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 138 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 140 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 139 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 137 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 141 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 142 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 143 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 144 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 147 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 146 Failed
+('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+Purchase 149 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Purchase 145 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 148 Failed
+HTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connect...
+
+Purchase 150 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Completed 150 purchases (0 successful) in 826.14s
+===================

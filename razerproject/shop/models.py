@@ -7,6 +7,7 @@ class RazerUser(models.Model):
     password = models.CharField(max_length=255)
     secret_key= models.CharField(max_length=255,null=True,blank=True) 
     regionNumber=models.IntegerField(null=True,blank=True) 
+    status=models.BooleanField(default=True,null=True,blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
 

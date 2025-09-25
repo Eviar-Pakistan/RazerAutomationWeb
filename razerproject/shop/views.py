@@ -150,22 +150,27 @@ def form_view_operation(request):
 
 
 # =========================Getting Product Info===================================
+
+
+
 def get_product_info(request):
     if request.method == "POST":
         body = json.loads(request.body)
         product = body.get("product")
         email=body.get("email")
+        region=body.get("regionId")
 
-        print("[Product Info View] Product:",product," Email",email)
+        print("[Product Info View] Product:",product," Email",email,"region",region)
 
         script_path = os.path.join(os.path.dirname(__file__), "products.py")
 
         try:
           result = subprocess.run(
-            [sys.executable, script_path, product,email],
+            [sys.executable, script_path, product,email,region],
             capture_output=True,
             text=True
           )
+          
         except Exception as e:
             print("Error while opening product subprocees",e)
             return JsonResponse({
@@ -176,11 +181,7 @@ def get_product_info(request):
             output = json.loads(result.stdout)
             return JsonResponse(output)
         except Exception as e:
-            return JsonResponse({
-                "error": "Failed to parse product info",
-                "stdout": result.stdout,
-                "stderr": result.stderr
-            }, status=500)
+            return JsonResponse(output)
 
     return JsonResponse({"error": "Invalid request"}, status=400)
 
@@ -192,6 +193,41 @@ def download_results(request):
     else:
         return HttpResponse("File not found.", status=404)
     
+
+#==========================Checking Balance===================================
+ 
+
+
+def get_balance(request):
+    if request.method == "POST":
+        body = json.loads(request.body)
+        email=body.get("email")
+     
+
+        print("[Balance Info View] Email: Email",email)
+
+        script_path = os.path.join(os.path.dirname(__file__), "balance.py")
+
+        try:
+          result = subprocess.run(
+            [sys.executable, script_path,email],
+            capture_output=True,
+            text=True
+          )
+          
+        except Exception as e:
+            print("Error while opening balance subprocees",e)
+            return JsonResponse({
+                "error": "Failed to run balance subprocess",
+            }, status=500)
+
+        try:
+            output = json.loads(result.stdout)
+            return JsonResponse(output)
+        except Exception as e:
+            return JsonResponse(output)
+
+    return JsonResponse({"error": "Invalid request"}, status=400) 
 
 #==========================Send secret key get OTP=============================
 @csrf_exempt
@@ -300,7 +336,29 @@ def check_user(request):
     return JsonResponse({"error": "POST required"}, status=400)
 
 
+# =======================Deactivating Razer User=============================
+@csrf_exempt
 
+def deactivate_user(request):
+    if request.method != "POST":
+       return JsonResponse({"error": "POST required"}, status=400)
+    data = json.loads(request.body)
+    email = data.get("email")
+
+    if not email:
+        return JsonResponse({"error": "Email is required."}, status=400)
+
+    try:
+        user = RazerUser.objects.get(email=email, user=request.user)
+    except RazerUser.DoesNotExist:
+        return JsonResponse({"error": "User not found or unauthorized."}, status=404)
+
+    user.status = False
+    user.save()
+
+    return JsonResponse({"message": f"User {email} has been deactivated."}, status=200)
+                    
+                        
 # =========================Storing Razer User + Fetching it============================
 class RazerUserListCreateView(generics.ListCreateAPIView):
     serializer_class = RazerUserSerializer
@@ -308,11 +366,14 @@ class RazerUserListCreateView(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return RazerUser.objects.filter(user=self.request.user)
+        return RazerUser.objects.filter(user=self.request.user,status=True)
 
     def perform_create(self, serializer):
         print("DEBUG REQUEST DATA:", self.request.data)
         serializer.save(user=self.request.user)
+
+
+
 
 
 

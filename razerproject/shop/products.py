@@ -6,7 +6,18 @@ import re
 if __name__ == "__main__":
     product = sys.argv[1]
     email = sys.argv[2]
+    region = sys.argv[3]
 
+
+result_data = {
+        "success": False,
+        "products": [],
+        "error": ""
+    }
+# proxies = {
+#     'http': 'http://198.199.86.11:8080',
+#     'https': 'http://198.199.86.11:8080',
+# }
 # print("[Product.py] Email:",email," Product:",product)    
    
 def safe_email(email):
@@ -32,7 +43,7 @@ uuid = session_data.get("uuid")
 # print("Access Token:", access_token)
 # print("UUID:", uuid)
 
-catalog_url = f"https://gold.razer.com/api/v2/content/gold/catalogs/29/{product}"
+catalog_url = f"https://gold.razer.com/api/v2/content/gold/catalogs/{int(region)}/{product}"
 
 catalog_headers = {
     "Accept": "application/json, text/plain, */*",
@@ -44,8 +55,10 @@ catalog_headers = {
     "Origin": "https://gold.razer.com",
     "Referer": "https://gold.razer.com/pk/en/gold/catalog/pubg-mobile-uc-code"
 }
-
-catalog_response = session.get(catalog_url, headers=catalog_headers)
+try:
+ catalog_response = session.get(catalog_url, headers=catalog_headers)
+except Exception as e:
+ result_data["error"] = f"Catalog Load Failed: {str(e)}"
 
 if catalog_response.status_code == 200:
     catalog_data = catalog_response.json()
@@ -55,9 +68,13 @@ if catalog_response.status_code == 200:
     {"productId": sku["productId"], "vanityName": sku["vanityName"]}
     for sku in catalog_data["gameSkus"]
 ]
-
-    print(json.dumps({"products": minimal_products}))
+    result_data["products"] = minimal_products
+    result_data["success"] = True
+    print(json.dumps({"catalog_result": result_data}))
 else:
-    print("Catalog Load Failed ")
-    print("Status:", catalog_response.status_code)
-    print(catalog_response.text)
+    # print("Catalog Load Failed ")
+    # print("Status:", catalog_response.status_code)
+    # print(catalog_response.text)
+    result_data["error"] = f"Catalog Load Failed: {catalog_response.text} (Status {catalog_response.status_code})"
+    result_data["success"] = False
+    print(json.dumps({"catalog_result": result_data}))

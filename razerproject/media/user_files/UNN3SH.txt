@@ -1,0 +1,28 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 2
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+SOCKSHTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ConnectTimeoutError(<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x000001EA9753D940>, 'Connection to gold.razer.com timed out. (connect timeout=30)'))
+
+
+Purchase 2 Failed
+SOCKSHTTPSConnectionPool(host='gold.razer.com', port=443): Max retries exceeded with url: /api/webshop/checkout/gold (Caused by ConnectTimeoutError(<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x000001EA9754A990>, 'Connection to gold.razer.com timed out. (connect timeout=30)'))
+
+
+Completed 2 purchases in 21.07s
+===================
