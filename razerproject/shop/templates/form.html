@@ -679,29 +679,31 @@
           stopTimer();
 
 
-          try{
-            const res = await fetch("/get-balance", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                "X-CSRFToken": csrftoken
-              },
-              body: JSON.stringify({ email:selecteduserEmail })
-            });
-      
-            const data = await res.json();
-            console.log("Balance response:", data);
-    
-            document.getElementById("goldID").innerText = `${data.balance_result.gold_balance}`;
-            document.getElementById("silverID").innerText = `${data.balance_result.silver_balance}`;
-          }catch(e){
-            console.log("Error fetching balance:", e)
-            statusDiv.innerHTML = `<p class="text-red-500 text-base font-medium" style="color:red">${e}</p>`;
-          }
-
-
           
         }
+
+        
+
+        try{
+          const res = await fetch("/get-balance", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": csrftoken
+            },
+            body: JSON.stringify({ email:selecteduserEmail })
+          });
+    
+          const data = await res.json();
+          console.log("Balance response after purchase:", data);
+  
+          document.getElementById("goldID").innerText = `${data.balance_result.gold_balance}`;
+          document.getElementById("silverID").innerText = `${data.balance_result.silver_balance}`;
+        }catch(e){
+          console.log("Error fetching balance:", e)
+          statusDiv.innerHTML = `<p class="text-red-500 text-base font-medium" style="color:red">${e}</p>`;
+        }
+
 
         if(!result.download_url_success){
           document.getElementById("productInfo").innerHTML += `<p class="text-red-400 max-w-xl">However, there was an issue generating the download link</p>`;

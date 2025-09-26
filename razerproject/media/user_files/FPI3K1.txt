@@ -1,0 +1,30 @@
+User Details
+===================
+
+Account:umairkhanpk2004@gmail.com
+RazerID:fastVividTangeloJET216
+
+===================
+Product Details
+===================
+
+Product ID: 22430
+Vanity Name: 10 Coins
+Quantity: 1
+
+===================
+Transaction Results
+===================
+
+Purchase 1 Failed
+Checkout Failed: {"code":70600,"message":"Invalid Request"}...
+
+Transaction Number: No transaction number
+Pin Code: No pin code
+
+-------------------
+Completed 1 purchases in 4.77s
+Success: 0/1 (0.0%)
+Access Denied errors: 0
+Total retries: 0
+===================

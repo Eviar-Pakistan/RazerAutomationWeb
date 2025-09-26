@@ -12,7 +12,8 @@ if __name__ == "__main__":
 result_data = {
         "success": False,
         "products": [],
-        "error": ""
+        "error": "",
+        "errorDetails": {}
     }
 # proxies = {
 #     'http': 'http://198.199.86.11:8080',
@@ -65,9 +66,13 @@ if catalog_response.status_code == 200:
     # print("Catalog Loaded ")
     # print("Catalog Data ==>",catalog_data["gameSkus"])
     minimal_products = [
-    {"productId": sku["productId"], "vanityName": sku["vanityName"]}
+    {
+        "productId": sku["productId"],
+        "vanityName": sku["vanityName"] if sku.get("vanityName") else sku.get("productName")
+    }
     for sku in catalog_data["gameSkus"]
-]
+    ]
+    
     result_data["products"] = minimal_products
     result_data["success"] = True
     print(json.dumps({"catalog_result": result_data}))
@@ -76,5 +81,16 @@ else:
     # print("Status:", catalog_response.status_code)
     # print(catalog_response.text)
     result_data["error"] = f"Catalog Load Failed: {catalog_response.text} (Status {catalog_response.status_code})"
+
+    result_data["errorDetails"] = {
+    "status_code": catalog_response.status_code,
+    "reason": catalog_response.reason,
+    "url": catalog_response.url,
+    "headers": dict(catalog_response.headers),
+    "cookies": catalog_response.cookies.get_dict(),
+    "elapsed": catalog_response.elapsed.total_seconds(),
+    "text": catalog_response.text
+    }
+
     result_data["success"] = False
     print(json.dumps({"catalog_result": result_data}))
